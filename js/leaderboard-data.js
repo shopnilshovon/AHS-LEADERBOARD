@@ -3,29 +3,29 @@ const users = [
 {
 name:"AHS_Rocky",
 country:"Bangladesh",
-sms:242,
-earning:4.363
+sms:291,
+earning:5.283
 },
 
 {
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:181,
-earning:3.409
+sms:216,
+earning:4.058
 },
 
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:170,
-earning:3.258
+sms:174,
+earning:3.334
 },
 
 {
 name:"AHS_jerry",
 country:"Bangladesh",
-sms:115,
-earning:2.185
+sms:136,
+earning:2.580
 },
 
 {
@@ -43,6 +43,13 @@ earning:1.742
 },
 
 {
+name:"SHOVON",
+country:"Bangladesh",
+sms:103,
+earning:2.006
+},
+
+{
 name:"AH_Sujon",
 country:"Bangladesh",
 sms:69,
@@ -50,24 +57,17 @@ earning:1.211
 },
 
 {
-name:"SHOVON",
-country:"Bangladesh",
-sms:80,
-earning:1.581
-},
-
-{
 name:"AHS_Shanto",
 country:"Bangladesh",
-sms:57,
-earning:0.986
+sms:58,
+earning:1.003
 },
 
 {
 name:"tlttoufiq909",
 country:"Bangladesh",
-sms:10,
-earning:0.140
+sms:40,
+earning:0.656
 },
 
 {
@@ -87,8 +87,8 @@ earning:0.133
 {
 name:"AHS_Obito",
 country:"Bangladesh",
-sms:3,
-earning:0.057
+sms:5,
+earning:0.091
 },
 
 {
@@ -100,10 +100,10 @@ earning:0.014
 
 ];
 
-/* 
-Unnamed SMS added to SHOVON:
-19 SMS + $0.392
+/*
+Unnamed SMS Added To SHOVON
+20 SMS + $0.411
 */
 
 const dailyUpdate =
-"16 May 2026 • 12:10 AM";
+"16 May 2026 • 2:22 AM";
