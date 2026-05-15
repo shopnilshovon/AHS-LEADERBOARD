@@ -1,437 +1,277 @@
-/* =========================================
-PREMIUM LEADERBOARD CARD DESIGN
-FULL UPDATED VERSION
-========================================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-.rank-card{
+body{
+background:#020617;
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+}
 
+/* CONTAINER */
+
+.container{
+max-width:900px;
+margin:auto;
+padding:20px;
 position:relative;
-overflow:hidden;
-
-margin-bottom:22px;
-
-padding:22px;
-
-border-radius:32px;
-
-background:
-linear-gradient(
-135deg,
-rgba(8,15,35,.96),
-rgba(12,20,45,.94),
-rgba(28,15,45,.92)
-);
-
-border:1px solid rgba(255,255,255,.06);
-
-backdrop-filter:blur(24px);
-
-box-shadow:
-0 0 25px rgba(0,0,0,.35),
-0 0 70px rgba(59,130,246,.06);
-
-transition:.35s ease;
+z-index:2;
 }
 
-.rank-card:hover{
+/* HEADER */
 
-transform:translateY(-4px);
-
-box-shadow:
-0 0 35px rgba(59,130,246,.18),
-0 0 80px rgba(168,85,247,.12);
+.header{
+text-align:center;
+padding:30px 10px 20px;
 }
 
-/* =========================
-TOP 1
-========================= */
+.logo{
+width:90px;
+height:90px;
 
-.rank-card.rank1{
+margin:auto auto 20px;
 
-border:1px solid rgba(255,215,0,.65);
-
-box-shadow:
-0 0 25px rgba(255,215,0,.16),
-0 0 80px rgba(255,215,0,.08);
-}
-
-/* =========================
-TOP 2
-========================= */
-
-.rank-card.rank2{
-
-border:1px solid rgba(220,220,255,.55);
-
-box-shadow:
-0 0 25px rgba(180,220,255,.12);
-}
-
-/* =========================
-TOP 3
-========================= */
-
-.rank-card.rank3{
-
-border:1px solid rgba(255,145,0,.55);
-
-box-shadow:
-0 0 25px rgba(255,145,0,.12);
-}
-
-/* =========================
-CARD CONTENT
-========================= */
-
-.rank-content{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:14px;
-}
-
-/* =========================
-LEFT
-========================= */
-
-.rank-left{
-
-display:flex;
-align-items:center;
-gap:14px;
-
-min-width:0;
-}
-
-/* =========================
-RANK NUMBER
-========================= */
-
-.rank-number{
-
-width:70px;
-height:70px;
-
-border-radius:24px;
+border-radius:28px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:34px;
-font-weight:900;
+font-size:42px;
 
 background:
 linear-gradient(
 135deg,
-#020617,
-#08142e
-);
-
-color:white;
-
-box-shadow:
-inset 0 0 18px rgba(255,255,255,.03),
-0 0 18px rgba(0,0,0,.35);
-
-flex-shrink:0;
-}
-
-.rank1 .rank-number{
-
-color:#ffd700;
-
-text-shadow:
-0 0 15px rgba(255,215,0,.55);
-}
-
-.rank2 .rank-number{
-
-color:#dbeafe;
-
-text-shadow:
-0 0 15px rgba(180,220,255,.45);
-}
-
-.rank3 .rank-number{
-
-color:#ff9a00;
-
-text-shadow:
-0 0 15px rgba(255,145,0,.45);
-}
-
-/* =========================
-BANGLADESH FLAG
-========================= */
-
-.country-flag{
-
-width:46px;
-height:46px;
-
-border-radius:50%;
-
-object-fit:cover;
-
-border:2px solid rgba(255,255,255,.12);
-
-box-shadow:
-0 0 18px rgba(59,130,246,.18);
-
-flex-shrink:0;
-}
-
-/* =========================
-NAME SECTION
-========================= */
-
-.rank-info{
-min-width:0;
-}
-
-.rank-name{
-
-font-size:34px;
-font-weight:900;
-
-letter-spacing:.5px;
-
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-}
-
-/* =========================
-TOP NAME COLORS
-========================= */
-
-.rank1 .rank-name{
-
-background:
-linear-gradient(
-to right,
-#fff7b1,
-#ffd700,
-#ffb300
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-0 0 18px rgba(255,215,0,.35);
-}
-
-.rank2 .rank-name{
-
-background:
-linear-gradient(
-to right,
-#ffffff,
-#cbe7ff,
-#8ec5ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-0 0 18px rgba(180,220,255,.35);
-}
-
-.rank3 .rank-name{
-
-background:
-linear-gradient(
-to right,
-#ffd9a1,
-#ff9900,
-#ff6a00
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-0 0 18px rgba(255,145,0,.35);
-}
-
-.rank4 .rank-name{
-
-background:
-linear-gradient(
-to right,
-#b7ff7a,
-#84ff00
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.rank5 .rank-name{
-
-background:
-linear-gradient(
-to right,
-#f0abfc,
-#c084fc,
-#9333ea
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* =========================
-COUNTRY TEXT
-========================= */
-
-.rank-country{
-
-display:flex;
-align-items:center;
-gap:8px;
-
-margin-top:6px;
-
-font-size:18px;
-font-weight:600;
-
-color:#dbeafe;
-}
-
-/* =========================
-RIGHT
-========================= */
-
-.rank-right{
-text-align:right;
-flex-shrink:0;
-}
-
-/* =========================
-SMS
-========================= */
-
-.rank-sms{
-
-font-size:58px;
-font-weight:900;
-
-line-height:1;
-
-background:
-linear-gradient(
-to bottom,
-#8fd3ff,
-#4ea6ff
-);
-
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-
-text-shadow:
-0 0 18px rgba(80,180,255,.28);
-}
-
-/* =========================
-MONEY
-========================= */
-
-.rank-money{
-
-margin-top:10px;
-
-font-size:38px;
-font-weight:900;
-
-color:#22c55e;
-
-text-shadow:
-0 0 18px rgba(34,197,94,.35);
-}
-
-/* =========================
-PROGRESS BAR
-========================= */
-
-.progress-wrap{
-
-margin-top:22px;
-
-height:18px;
-
-border-radius:30px;
-
-overflow:hidden;
-
-background:
-rgba(255,255,255,.08);
-}
-
-.progress{
-
-height:100%;
-
-border-radius:30px;
-
-background:
-linear-gradient(
-90deg,
 #2563eb,
 #7c3aed,
 #d946ef
 );
 
 box-shadow:
-0 0 18px rgba(217,70,239,.28);
+0 0 35px rgba(124,58,237,.45);
+
+animation:float 4s ease-in-out infinite;
 }
 
-/* =========================
-MOBILE
-========================= */
+@keyframes float{
+50%{
+transform:translateY(-8px);
+}
+}
+
+.title{
+font-size:58px;
+font-weight:900;
+
+line-height:1.05;
+
+background:
+linear-gradient(
+to right,
+#ffffff,
+#7dd3fc,
+#c084fc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:14px;
+}
+
+.subtitle{
+font-size:20px;
+color:#dbeafe;
+opacity:.9;
+}
+
+/* TOPBAR */
+
+.topbar{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+
+margin-top:35px;
+margin-bottom:30px;
+}
+
+.topCard{
+padding:24px;
+
+border-radius:24px;
+
+background:
+linear-gradient(
+135deg,
+rgba(8,15,40,.92),
+rgba(15,23,55,.92)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+text-align:center;
+
+box-shadow:
+0 0 25px rgba(0,0,0,.25);
+}
+
+.topCard h2{
+font-size:42px;
+font-weight:900;
+
+background:
+linear-gradient(
+to bottom,
+#7dd3fc,
+#60a5fa
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+margin-bottom:10px;
+}
+
+.topCard p{
+font-size:15px;
+color:#dbeafe;
+opacity:.8;
+}
+
+/* SEARCH */
+
+.searchWrap{
+margin-bottom:25px;
+}
+
+.searchBox{
+position:relative;
+}
+
+.searchInput{
+width:100%;
+height:68px;
+
+border:none;
+outline:none;
+
+padding:0 22px 0 62px;
+
+border-radius:22px;
+
+background:
+rgba(8,15,40,.88);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:white;
+
+font-size:18px;
+font-weight:600;
+
+backdrop-filter:blur(18px);
+
+transition:.3s;
+}
+
+.searchInput:focus{
+border-color:#3b82f6;
+
+box-shadow:
+0 0 25px rgba(59,130,246,.25);
+}
+
+.searchInput::placeholder{
+color:#94a3b8;
+}
+
+.searchIcon{
+position:absolute;
+
+left:22px;
+top:50%;
+
+transform:translateY(-50%);
+
+font-size:22px;
+color:#94a3b8;
+}
+
+/* FOOTER */
+
+.footer{
+text-align:center;
+
+padding:40px 0 20px;
+
+font-size:16px;
+
+color:#cbd5e1;
+}
+
+.footer span{
+color:#60a5fa;
+font-weight:700;
+}
+
+/* MOBILE */
 
 @media(max-width:768px){
 
-.rank-card{
+.container{
 padding:16px;
+}
+
+.logo{
+width:75px;
+height:75px;
+font-size:34px;
 border-radius:24px;
 }
 
-.rank-number{
-width:58px;
-height:58px;
-font-size:28px;
+.title{
+font-size:34px;
+}
+
+.subtitle{
+font-size:15px;
+}
+
+.topbar{
+grid-template-columns:1fr;
+gap:14px;
+}
+
+.topCard{
+padding:18px;
 border-radius:20px;
 }
 
-.country-flag{
-width:40px;
-height:40px;
+.topCard h2{
+font-size:34px;
 }
 
-.rank-name{
-font-size:22px;
+.searchInput{
+height:58px;
+font-size:16px;
+padding-left:54px;
+border-radius:18px;
 }
 
-.rank-country{
-font-size:13px;
+.searchIcon{
+left:18px;
+font-size:20px;
 }
 
-.rank-sms{
-font-size:42px;
-}
-
-.rank-money{
-font-size:28px;
-}
-
-.progress-wrap{
-height:14px;
-margin-top:18px;
+.footer{
+font-size:14px;
 }
 
 }
