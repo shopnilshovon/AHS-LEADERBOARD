@@ -1,26 +1,26 @@
-const list=document.getElementById("list");
+const list = document.getElementById("list");
 
 users.sort((a,b)=>b.sms-a.sms);
 
-document.getElementById("userCount").innerText=
+document.getElementById("userCount").innerText =
 users.length;
 
-document.getElementById("totalSms").innerText=
+document.getElementById("totalSms").innerText =
 users.reduce((a,b)=>a+b.sms,0);
 
-document.getElementById("totalEarn").innerText=
-"$"+
+document.getElementById("totalEarn").innerText =
+"$" +
 users.reduce((a,b)=>
-a+calculateEarning(b.name,b.earning),0
+a + calculateEarning(b.name,b.earning),0
 ).toFixed(2);
 
 function render(data){
 
-list.innerHTML="";
+list.innerHTML = "";
 
-if(data.length===0){
+if(data.length === 0){
 
-list.innerHTML=`
+list.innerHTML = `
 
 <div class="notfound">
 
@@ -37,46 +37,50 @@ No leaderboard user available.
 `;
 
 return;
+
 }
 
-const maxSms=Math.max(...data.map(x=>x.sms));
+const maxSms = Math.max(...data.map(x=>x.sms));
 
 data.forEach((u,index)=>{
 
-const earn=
+const earn =
 calculateEarning(u.name,u.earning);
 
-const percent=
-(u.sms/maxSms)*100;
+const percent =
+(u.sms / maxSms) * 100;
 
-let topClass="";
+const card = document.createElement("div");
 
-if(index===0) topClass="gold";
-if(index===1) topClass="silver";
-if(index===2) topClass="bronze";
+card.className = "card";
 
-const card=document.createElement("div");
+card.innerHTML = `
 
-card.className=`card ${topClass}`;
-
-card.innerHTML=`
-
-<div class="row">
+<div class="cardTop">
 
 <div class="left">
 
-<div class="rank">
-${index+1}
+<div class="rankBox">
+${index + 1}
 </div>
 
-<div class="info">
+<div class="userInfo">
 
 <div class="name">
 ${u.name}
 </div>
 
 <div class="country">
-🌍 ${u.country}
+
+<img
+src="https://flagcdn.com/w80/bd.png"
+class="flag"
+>
+
+<span>
+Bangladesh
+</span>
+
 </div>
 
 </div>
@@ -120,9 +124,11 @@ document
 .getElementById("search")
 .addEventListener("input",e=>{
 
-const value=e.target.value.toLowerCase();
+const value =
+e.target.value.toLowerCase();
 
-const filtered=users.filter(x=>
+const filtered =
+users.filter(x=>
 x.name.toLowerCase().includes(value)
 );
 
