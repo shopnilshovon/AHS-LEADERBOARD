@@ -3,22 +3,29 @@ const users = [
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:132,
-earning:2.536
+sms:157,
+earning:3.011
 },
 
 {
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:95,
-earning:1.775
+sms:147,
+earning:2.763
+},
+
+{
+name:"AHS_jerry",
+country:"Bangladesh",
+sms:85,
+earning:1.615
 },
 
 {
 name:"SM_SHAKIB",
 country:"Bangladesh",
-sms:75,
-earning:1.581
+sms:80,
+earning:1.668
 },
 
 {
@@ -29,6 +36,13 @@ earning:0.907
 },
 
 {
+name:"tltraihan",
+country:"Bangladesh",
+sms:52,
+earning:0.728
+},
+
+{
 name:"AHS_Rocky",
 country:"Bangladesh",
 sms:49,
@@ -36,24 +50,10 @@ earning:0.897
 },
 
 {
-name:"AHS_jerry",
-country:"Bangladesh",
-sms:49,
-earning:0.931
-},
-
-{
-name:"tltraihan",
-country:"Bangladesh",
-sms:46,
-earning:0.644
-},
-
-{
 name:"SHOVON",
 country:"Bangladesh",
-sms:37,
-earning:0.786
+sms:45,
+earning:0.952
 },
 
 {
