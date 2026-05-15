@@ -5,19 +5,15 @@ const list = document.getElementById("list");
 const latestUpdate =
 "15 May 2026 • 5:18 PM";
 
-/* LEADERBOARD DATA */
+/* DATA */
 
-const leaderboardData = {
+const dailyData = users;
 
-daily: users,
+const weeklyData = [...users];
 
-weekly: users,
+const allTimeData = [...users];
 
-alltime: users
-
-};
-
-let currentMode = "daily";
+let currentData = dailyData;
 
 /* BUTTONS */
 
@@ -30,39 +26,25 @@ document.getElementById("weeklyBtn");
 const alltimeBtn =
 document.getElementById("alltimeBtn");
 
-/* RENDER FUNCTION */
+/* BUTTON ACTIVE */
+
+function setActive(btn){
+
+dailyBtn.classList.remove("active");
+weeklyBtn.classList.remove("active");
+alltimeBtn.classList.remove("active");
+
+btn.classList.add("active");
+
+}
+
+/* RENDER */
 
 function render(data){
 
 list.innerHTML = "";
 
-if(data.length === 0){
-
-list.innerHTML = `
-
-<div class="notfound">
-
-<h2>
-❌ User Not Found
-</h2>
-
-<p>
-No leaderboard user available.
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-/* SORT */
-
 data.sort((a,b)=>b.sms-a.sms);
-
-/* TOP INFO */
 
 document.getElementById("userCount").innerText =
 data.length;
@@ -76,17 +58,11 @@ data.reduce((a,b)=>
 a + calculateEarning(b.name,b.earning),0
 ).toFixed(2);
 
-/* UPDATE TIME */
-
 document.getElementById("updateTime").innerText =
 latestUpdate;
 
-/* MAX SMS */
-
 const maxSms =
 Math.max(...data.map(x=>x.sms));
-
-/* CARD LOOP */
 
 data.forEach((u,index)=>{
 
@@ -94,7 +70,7 @@ const earn =
 calculateEarning(u.name,u.earning);
 
 const percent =
-(u.sms / maxSms) * 100;
+(u.sms/maxSms)*100;
 
 const card =
 document.createElement("div");
@@ -108,7 +84,7 @@ card.innerHTML = `
 <div class="left">
 
 <div class="rankBox">
-${index + 1}
+${index+1}
 </div>
 
 <div class="userInfo">
@@ -165,57 +141,37 @@ list.appendChild(card);
 
 }
 
-/* BUTTON ACTIVE */
+/* BUTTON CLICK */
 
-function setActive(btn){
+dailyBtn.onclick = ()=>{
 
-dailyBtn.classList.remove("active");
-weeklyBtn.classList.remove("active");
-alltimeBtn.classList.remove("active");
-
-btn.classList.add("active");
-
-}
-
-/* DAILY */
-
-dailyBtn.addEventListener("click",()=>{
-
-currentMode = "daily";
+currentData = dailyData;
 
 setActive(dailyBtn);
 
-render(leaderboardData.daily);
+render(currentData);
 
-});
+};
 
-/* WEEKLY */
+weeklyBtn.onclick = ()=>{
 
-weeklyBtn.addEventListener("click",()=>{
-
-currentMode = "weekly";
+currentData = weeklyData;
 
 setActive(weeklyBtn);
 
-render(leaderboardData.weekly);
+render(currentData);
 
-});
+};
 
-/* ALL TIME */
+alltimeBtn.onclick = ()=>{
 
-alltimeBtn.addEventListener("click",()=>{
-
-currentMode = "alltime";
+currentData = allTimeData;
 
 setActive(alltimeBtn);
 
-render(leaderboardData.alltime);
+render(currentData);
 
-});
-
-/* FIRST LOAD */
-
-render(leaderboardData.daily);
+};
 
 /* SEARCH */
 
@@ -227,11 +183,15 @@ const value =
 e.target.value.toLowerCase();
 
 const filtered =
-leaderboardData[currentMode]
-.filter(x=>
+currentData.filter(x=>
 x.name.toLowerCase().includes(value)
 );
 
 render(filtered);
 
 });
+
+/* FIRST LOAD */
+
+render(dailyData);
+setActive(dailyBtn);
