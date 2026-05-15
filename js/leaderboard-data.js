@@ -3,8 +3,8 @@ const users = [
 {
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:175,
-earning:3.295
+sms:181,
+earning:3.409
 },
 
 {
@@ -29,24 +29,24 @@ earning:1.668
 },
 
 {
-name:"AH_Sujon",
+name:"AHS_Rocky",
 country:"Bangladesh",
-sms:53,
-earning:0.907
+sms:64,
+earning:1.167
 },
 
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:52,
-earning:0.728
+sms:59,
+earning:0.826
 },
 
 {
-name:"AHS_Rocky",
+name:"AH_Sujon",
 country:"Bangladesh",
-sms:49,
-earning:0.897
+sms:53,
+earning:0.907
 },
 
 {
