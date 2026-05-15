@@ -1,65 +1,40 @@
 const list = document.getElementById("list");
-const buttons = document.querySelectorAll(".switchBtn");
-const updateTime = document.getElementById("updateTime");
 
-let currentUsers = dailyUsers;
+/* UPDATE TIME */
 
-function loadLeaderboard(type){
+const latestUpdate =
+"15 May 2026 • 5:18 PM";
 
-if(type === "daily"){
-currentUsers = dailyUsers;
-updateTime.innerText = updateInfo.daily;
-}
+/* LEADERBOARD DATA */
 
-if(type === "weekly"){
-currentUsers = weeklyUsers;
-updateTime.innerText = updateInfo.weekly;
-}
+const leaderboardData = {
 
-if(type === "alltime"){
-currentUsers = alltimeUsers;
-updateTime.innerText = updateInfo.alltime;
-}
+daily: users,
 
-render(currentUsers);
+weekly: users,
 
-}
-
-buttons.forEach(btn=>{
-
-btn.onclick = ()=>{
-
-buttons.forEach(x=>x.classList.remove("active"));
-
-btn.classList.add("active");
-
-loadLeaderboard(btn.dataset.type);
+alltime: users
 
 };
 
-});
+let currentMode = "daily";
 
-function updateStats(data){
+/* BUTTONS */
 
-document.getElementById("userCount").innerText =
-data.length;
+const dailyBtn =
+document.getElementById("dailyBtn");
 
-document.getElementById("totalSms").innerText =
-data.reduce((a,b)=>a+b.sms,0);
+const weeklyBtn =
+document.getElementById("weeklyBtn");
 
-document.getElementById("totalEarn").innerText =
-"$"+
-data.reduce((a,b)=>
-a+calculateEarning(b.name,b.earning),0
-).toFixed(2);
+const alltimeBtn =
+document.getElementById("alltimeBtn");
 
-}
+/* RENDER FUNCTION */
 
 function render(data){
 
 list.innerHTML = "";
-
-updateStats(data);
 
 if(data.length === 0){
 
@@ -83,11 +58,37 @@ return;
 
 }
 
-const maxSms = Math.max(...data.map(x=>x.sms));
+/* SORT */
 
-const sorted = [...data].sort((a,b)=>b.sms-a.sms);
+data.sort((a,b)=>b.sms-a.sms);
 
-sorted.forEach((u,index)=>{
+/* TOP INFO */
+
+document.getElementById("userCount").innerText =
+data.length;
+
+document.getElementById("totalSms").innerText =
+data.reduce((a,b)=>a+b.sms,0);
+
+document.getElementById("totalEarn").innerText =
+"$" +
+data.reduce((a,b)=>
+a + calculateEarning(b.name,b.earning),0
+).toFixed(2);
+
+/* UPDATE TIME */
+
+document.getElementById("updateTime").innerText =
+latestUpdate;
+
+/* MAX SMS */
+
+const maxSms =
+Math.max(...data.map(x=>x.sms));
+
+/* CARD LOOP */
+
+data.forEach((u,index)=>{
 
 const earn =
 calculateEarning(u.name,u.earning);
@@ -95,7 +96,8 @@ calculateEarning(u.name,u.earning);
 const percent =
 (u.sms / maxSms) * 100;
 
-const card = document.createElement("div");
+const card =
+document.createElement("div");
 
 card.className = "card";
 
@@ -123,7 +125,7 @@ class="flag"
 >
 
 <span>
-Bangladesh
+${u.country}
 </span>
 
 </div>
@@ -163,9 +165,59 @@ list.appendChild(card);
 
 }
 
-render(dailyUsers);
+/* BUTTON ACTIVE */
 
-updateTime.innerText = updateInfo.daily;
+function setActive(btn){
+
+dailyBtn.classList.remove("active");
+weeklyBtn.classList.remove("active");
+alltimeBtn.classList.remove("active");
+
+btn.classList.add("active");
+
+}
+
+/* DAILY */
+
+dailyBtn.addEventListener("click",()=>{
+
+currentMode = "daily";
+
+setActive(dailyBtn);
+
+render(leaderboardData.daily);
+
+});
+
+/* WEEKLY */
+
+weeklyBtn.addEventListener("click",()=>{
+
+currentMode = "weekly";
+
+setActive(weeklyBtn);
+
+render(leaderboardData.weekly);
+
+});
+
+/* ALL TIME */
+
+alltimeBtn.addEventListener("click",()=>{
+
+currentMode = "alltime";
+
+setActive(alltimeBtn);
+
+render(leaderboardData.alltime);
+
+});
+
+/* FIRST LOAD */
+
+render(leaderboardData.daily);
+
+/* SEARCH */
 
 document
 .getElementById("search")
@@ -175,7 +227,8 @@ const value =
 e.target.value.toLowerCase();
 
 const filtered =
-currentUsers.filter(x=>
+leaderboardData[currentMode]
+.filter(x=>
 x.name.toLowerCase().includes(value)
 );
 
