@@ -1,23 +1,41 @@
-const list = document.getElementById("list");
-
-const latestUpdate =
-"15 May 2026 • 5:18 PM";
+const list =
+document.getElementById("list");
 
 /* =========================
-   DATA SOURCES
+   DATA
 ========================= */
 
-const dailyData = typeof users !== "undefined"
+const dailyData =
+typeof users !== "undefined"
 ? users
 : [];
 
-const weeklyData = typeof weeklyUsers !== "undefined"
+const weeklyData =
+typeof weeklyUsers !== "undefined"
 ? weeklyUsers
 : [];
 
-const allTimeData = typeof alltimeUsers !== "undefined"
+const allTimeData =
+typeof alltimeUsers !== "undefined"
 ? alltimeUsers
 : [];
+
+/* =========================
+   UPDATE TIMES
+========================= */
+
+const dailyTime =
+"15 May 2026 • 5:18 PM";
+
+const weeklyTime =
+typeof weeklyUpdate !== "undefined"
+? weeklyUpdate
+: "No Update";
+
+const alltimeTime =
+typeof alltimeUpdate !== "undefined"
+? alltimeUpdate
+: "No Update";
 
 /* =========================
    BUTTONS
@@ -49,7 +67,18 @@ btn.classList.add("active");
 }
 
 /* =========================
-   RENDER FUNCTION
+   UPDATE TIME
+========================= */
+
+function setUpdateTime(time){
+
+document.getElementById("updateTime")
+.innerText = time;
+
+}
+
+/* =========================
+   RENDER
 ========================= */
 
 function render(data){
@@ -74,9 +103,14 @@ No users available.
 
 `;
 
-document.getElementById("userCount").innerText = 0;
-document.getElementById("totalSms").innerText = 0;
-document.getElementById("totalEarn").innerText = "$0";
+document.getElementById("userCount")
+.innerText = 0;
+
+document.getElementById("totalSms")
+.innerText = 0;
+
+document.getElementById("totalEarn")
+.innerText = "$0";
 
 return;
 
@@ -88,24 +122,24 @@ data.sort((a,b)=>b.sms-a.sms);
 
 /* TOP STATS */
 
-document.getElementById("userCount").innerText =
-data.length;
+document.getElementById("userCount")
+.innerText = data.length;
 
-document.getElementById("totalSms").innerText =
+document.getElementById("totalSms")
+.innerText =
 data.reduce((a,b)=>a+b.sms,0);
 
-document.getElementById("totalEarn").innerText =
+document.getElementById("totalEarn")
+.innerText =
 "$" +
 data.reduce((a,b)=>
-a + calculateEarning(b.name,b.earning),0
+a + calculateEarning(
+b.name,
+b.earning
+),0
 ).toFixed(2);
 
-/* UPDATE TIME */
-
-document.getElementById("updateTime").innerText =
-latestUpdate;
-
-/* MAX SMS */
+/* MAX */
 
 const maxSms =
 Math.max(...data.map(x=>x.sms));
@@ -115,7 +149,10 @@ Math.max(...data.map(x=>x.sms));
 data.forEach((u,index)=>{
 
 const earn =
-calculateEarning(u.name,u.earning);
+calculateEarning(
+u.name,
+u.earning
+);
 
 const percent =
 (u.sms/maxSms)*100;
@@ -199,6 +236,8 @@ currentData = dailyData;
 
 setActive(dailyBtn);
 
+setUpdateTime(dailyTime);
+
 render(currentData);
 
 });
@@ -209,6 +248,8 @@ currentData = weeklyData;
 
 setActive(weeklyBtn);
 
+setUpdateTime(weeklyTime);
+
 render(currentData);
 
 });
@@ -218,6 +259,8 @@ alltimeBtn.addEventListener("click",()=>{
 currentData = allTimeData;
 
 setActive(alltimeBtn);
+
+setUpdateTime(alltimeTime);
 
 render(currentData);
 
@@ -236,7 +279,8 @@ e.target.value.toLowerCase();
 
 const filtered =
 currentData.filter(x=>
-x.name.toLowerCase().includes(value)
+x.name.toLowerCase()
+.includes(value)
 );
 
 render(filtered);
@@ -248,5 +292,7 @@ render(filtered);
 ========================= */
 
 setActive(dailyBtn);
+
+setUpdateTime(dailyTime);
 
 render(dailyData);
