@@ -22,6 +22,20 @@ earning:1.900
 },
 
 {
+name:"AHS_Rocky",
+country:"Bangladesh",
+sms:98,
+earning:1.779
+},
+
+{
+name:"tltraihan",
+country:"Bangladesh",
+sms:89,
+earning:1.268
+},
+
+{
 name:"SM_SHAKIB",
 country:"Bangladesh",
 sms:81,
@@ -29,24 +43,10 @@ earning:1.685
 },
 
 {
-name:"tltraihan",
-country:"Bangladesh",
-sms:81,
-earning:1.156
-},
-
-{
-name:"AHS_Rocky",
-country:"Bangladesh",
-sms:65,
-earning:1.185
-},
-
-{
 name:"SHOVON",
 country:"Bangladesh",
-sms:60,
-earning:1.227
+sms:63,
+earning:1.283
 },
 
 {
@@ -59,8 +59,8 @@ earning:0.907
 {
 name:"AHS_Shanto",
 country:"Bangladesh",
-sms:38,
-earning:0.688
+sms:45,
+earning:0.797
 },
 
 {
@@ -87,4 +87,4 @@ earning:0.014
 ];
 
 const dailyUpdate =
-"15 May 2026 • 8:00 PM";
+"15 May 2026 • 8:55 PM";
