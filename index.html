@@ -4,7 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
 
 <title>AHS NETWORK GROUP</title>
 
@@ -27,6 +31,8 @@ rel="stylesheet"
 
 <div class="container">
 
+<!-- HEADER -->
+
 <div class="header">
 
 <div class="logo">
@@ -43,52 +49,90 @@ Premium SMS Leaderboard Dashboard
 
 </div>
 
+<!-- TOPBAR -->
+
 <div class="topbar">
 
 <div class="topCard">
-<h2 id="userCount">0</h2>
-<p>Total Users</p>
+
+<h2 id="userCount">
+0
+</h2>
+
+<p>
+Total Users
+</p>
+
 </div>
 
 <div class="topCard">
-<h2 id="totalSms">0</h2>
-<p>Total SMS</p>
+
+<h2 id="totalSms">
+0
+</h2>
+
+<p>
+Total SMS
+</p>
+
 </div>
 
 <div class="topCard">
-<h2 id="totalEarn">$0</h2>
-<p>Total Earnings</p>
-</div>
+
+<h2 id="totalEarn">
+$0
+</h2>
+
+<p>
+Total Earnings
+</p>
 
 </div>
 
-<div class="switchWrap">
+</div>
 
-<button class="switchBtn active" data-type="daily">
+<!-- MODE BUTTONS -->
+
+<div class="modeWrap">
+
+<button
+id="dailyBtn"
+class="modeBtn active"
+>
 🔥 Daily
 </button>
 
-<button class="switchBtn" data-type="weekly">
+<button
+id="weeklyBtn"
+class="modeBtn"
+>
 📅 Weekly
 </button>
 
-<button class="switchBtn" data-type="alltime">
+<button
+id="alltimeBtn"
+class="modeBtn"
+>
 👑 All Time
 </button>
 
 </div>
 
-<div class="updateBox">
+<!-- UPDATE -->
 
-<div class="updateTitle">
+<div class="updateCard">
+
+<h3>
 🔥 Latest Update
-</div>
+</h3>
 
-<div class="updateTime" id="updateTime">
+<p id="updateTime">
 15 May 2026 • 5:18 PM
-</div>
+</p>
 
 </div>
+
+<!-- SEARCH -->
 
 <div class="searchWrap">
 
@@ -110,18 +154,24 @@ autocomplete="off"
 
 </div>
 
+<!-- LIST -->
+
 <div id="list"></div>
 
+<!-- FOOTER -->
+
 <div class="footer">
-Powered By <span>AHS SHOVON</span>
-</div>
+
+Powered By
+<span>
+AHS SHOVON
+</span>
 
 </div>
 
-<script src="./js/daily-data.js"></script>
-<script src="./js/weekly-data.js"></script>
-<script src="./js/alltime-data.js"></script>
-<script src="./js/update-info.js"></script>
+</div>
+
+<script src="./js/leaderboard-data.js"></script>
 <script src="./js/commission-system.js"></script>
 <script src="./js/main.js"></script>
 
