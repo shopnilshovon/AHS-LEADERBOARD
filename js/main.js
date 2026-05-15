@@ -1,91 +1,53 @@
-const list =
-document.getElementById("list");
+const list = document.getElementById("list");
 
-/* =========================
-   DATA
-========================= */
+const dailyBtn = document.getElementById("dailyBtn");
+const weeklyBtn = document.getElementById("weeklyBtn");
+const alltimeBtn = document.getElementById("alltimeBtn");
 
-const dailyData =
-typeof users !== "undefined"
-? users
-: [];
+const userCount = document.getElementById("userCount");
+const totalSms = document.getElementById("totalSms");
+const totalEarn = document.getElementById("totalEarn");
 
-const weeklyData =
-typeof weeklyUsers !== "undefined"
-? weeklyUsers
-: [];
+const updateText = document.getElementById("updateText");
 
-const allTimeData =
-typeof alltimeUsers !== "undefined"
-? alltimeUsers
-: [];
+let currentData = users;
 
-/* =========================
-   UPDATE TIMES
-========================= */
+/* UPDATE TIME */
 
-const dailyTime =
-"15 May 2026 • 5:18 PM";
+if(typeof dailyUpdate !== "undefined"){
+updateText.innerText = dailyUpdate;
+}
 
-const weeklyTime =
-typeof weeklyUpdate !== "undefined"
-? weeklyUpdate
-: "No Update";
+/* SORT */
 
-const alltimeTime =
-typeof alltimeUpdate !== "undefined"
-? alltimeUpdate
-: "No Update";
+function sortData(data){
+return [...data].sort((a,b)=>b.sms-a.sms);
+}
 
-/* =========================
-   BUTTONS
-========================= */
+/* TOP INFO */
 
-const dailyBtn =
-document.getElementById("dailyBtn");
+function updateStats(data){
 
-const weeklyBtn =
-document.getElementById("weeklyBtn");
+userCount.innerText = data.length;
 
-const alltimeBtn =
-document.getElementById("alltimeBtn");
+totalSms.innerText =
+data.reduce((a,b)=>a+b.sms,0);
 
-let currentData = dailyData;
-
-/* =========================
-   ACTIVE BUTTON
-========================= */
-
-function setActive(btn){
-
-dailyBtn.classList.remove("active");
-weeklyBtn.classList.remove("active");
-alltimeBtn.classList.remove("active");
-
-btn.classList.add("active");
+totalEarn.innerText =
+"$" +
+data.reduce((a,b)=>
+a + calculateEarning(b.name,b.earning)
+,0).toFixed(2);
 
 }
 
-/* =========================
-   UPDATE TIME
-========================= */
-
-function setUpdateTime(time){
-
-document.getElementById("updateTime")
-.innerText = time;
-
-}
-
-/* =========================
-   RENDER
-========================= */
+/* RENDER */
 
 function render(data){
 
 list.innerHTML = "";
 
-if(!data || data.length === 0){
+if(data.length === 0){
 
 list.innerHTML = `
 
@@ -103,62 +65,23 @@ No users available.
 
 `;
 
-document.getElementById("userCount")
-.innerText = 0;
-
-document.getElementById("totalSms")
-.innerText = 0;
-
-document.getElementById("totalEarn")
-.innerText = "$0";
-
 return;
-
 }
 
-/* SORT */
-
-data.sort((a,b)=>b.sms-a.sms);
-
-/* TOP STATS */
-
-document.getElementById("userCount")
-.innerText = data.length;
-
-document.getElementById("totalSms")
-.innerText =
-data.reduce((a,b)=>a+b.sms,0);
-
-document.getElementById("totalEarn")
-.innerText =
-"$" +
-data.reduce((a,b)=>
-a + calculateEarning(
-b.name,
-b.earning
-),0
-).toFixed(2);
-
-/* MAX */
+const sorted = sortData(data);
 
 const maxSms =
-Math.max(...data.map(x=>x.sms));
+Math.max(...sorted.map(x=>x.sms));
 
-/* CARDS */
-
-data.forEach((u,index)=>{
+sorted.forEach((u,index)=>{
 
 const earn =
-calculateEarning(
-u.name,
-u.earning
-);
+calculateEarning(u.name,u.earning);
 
 const percent =
-(u.sms/maxSms)*100;
+(u.sms / maxSms) * 100;
 
-const card =
-document.createElement("div");
+const card = document.createElement("div");
 
 card.className = "card";
 
@@ -224,51 +147,13 @@ list.appendChild(card);
 
 });
 
+updateStats(sorted);
+
 }
 
-/* =========================
-   BUTTON EVENTS
-========================= */
-
-dailyBtn.addEventListener("click",()=>{
-
-currentData = dailyData;
-
-setActive(dailyBtn);
-
-setUpdateTime(dailyTime);
-
 render(currentData);
 
-});
-
-weeklyBtn.addEventListener("click",()=>{
-
-currentData = weeklyData;
-
-setActive(weeklyBtn);
-
-setUpdateTime(weeklyTime);
-
-render(currentData);
-
-});
-
-alltimeBtn.addEventListener("click",()=>{
-
-currentData = allTimeData;
-
-setActive(alltimeBtn);
-
-setUpdateTime(alltimeTime);
-
-render(currentData);
-
-});
-
-/* =========================
-   SEARCH
-========================= */
+/* SEARCH */
 
 document
 .getElementById("search")
@@ -279,20 +164,76 @@ e.target.value.toLowerCase();
 
 const filtered =
 currentData.filter(x=>
-x.name.toLowerCase()
-.includes(value)
+x.name.toLowerCase().includes(value)
 );
 
 render(filtered);
 
 });
 
-/* =========================
-   FIRST LOAD
-========================= */
+/* BUTTONS */
+
+function setActive(btn){
+
+[dailyBtn,weeklyBtn,alltimeBtn]
+.forEach(x=>x.classList.remove("active"));
+
+btn.classList.add("active");
+
+}
+
+/* DAILY */
+
+dailyBtn.addEventListener("click",()=>{
+
+currentData = users;
+
+render(currentData);
+
+if(typeof dailyUpdate !== "undefined"){
+updateText.innerText = dailyUpdate;
+}
 
 setActive(dailyBtn);
 
-setUpdateTime(dailyTime);
+});
 
-render(dailyData);
+/* WEEKLY */
+
+weeklyBtn.addEventListener("click",()=>{
+
+if(typeof weeklyUsers !== "undefined"){
+
+currentData = weeklyUsers;
+
+render(currentData);
+
+}
+
+if(typeof weeklyUpdate !== "undefined"){
+updateText.innerText = weeklyUpdate;
+}
+
+setActive(weeklyBtn);
+
+});
+
+/* ALL TIME */
+
+alltimeBtn.addEventListener("click",()=>{
+
+if(typeof allTimeUsers !== "undefined"){
+
+currentData = allTimeUsers;
+
+render(currentData);
+
+}
+
+if(typeof allTimeUpdate !== "undefined"){
+updateText.innerText = allTimeUpdate;
+}
+
+setActive(alltimeBtn);
+
+});
