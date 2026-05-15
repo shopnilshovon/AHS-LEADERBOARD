@@ -12,11 +12,11 @@ overflow:hidden;
 background:
 linear-gradient(
 135deg,
-rgba(8,15,40,.95),
-rgba(15,23,55,.92)
+rgba(5,10,30,.96),
+rgba(10,20,55,.92)
 );
 
-border-radius:28px;
+border-radius:30px;
 
 padding:22px;
 
@@ -27,54 +27,51 @@ backdrop-filter:blur(18px);
 transition:.35s;
 
 box-shadow:
-0 0 25px rgba(0,0,0,.35);
+0 0 30px rgba(0,0,0,.35);
 }
 
 .card:hover{
 transform:translateY(-4px);
-
-box-shadow:
-0 0 35px rgba(59,130,246,.25);
 }
 
-/* TOP 5 GLOW */
+/* TOP 5 PREMIUM */
 
 .card:nth-child(1){
-border:1px solid rgba(255,215,0,.7);
+border:1px solid #ffd700;
 
 box-shadow:
-0 0 25px rgba(255,215,0,.35);
+0 0 35px rgba(255,215,0,.35);
 }
 
 .card:nth-child(2){
-border:1px solid rgba(200,200,255,.7);
+border:1px solid #dbeafe;
 
 box-shadow:
-0 0 25px rgba(200,200,255,.25);
+0 0 30px rgba(220,220,255,.25);
 }
 
 .card:nth-child(3){
-border:1px solid rgba(255,140,0,.7);
+border:1px solid #ff8c00;
 
 box-shadow:
-0 0 25px rgba(255,140,0,.25);
+0 0 30px rgba(255,140,0,.25);
 }
 
 .card:nth-child(4){
-border:1px solid rgba(0,255,120,.55);
+border:1px solid #00ff99;
 
 box-shadow:
-0 0 20px rgba(0,255,120,.18);
+0 0 25px rgba(0,255,140,.18);
 }
 
 .card:nth-child(5){
-border:1px solid rgba(220,0,255,.55);
+border:1px solid #d946ef;
 
 box-shadow:
-0 0 20px rgba(220,0,255,.18);
+0 0 25px rgba(217,70,239,.18);
 }
 
-/* CONTENT */
+/* TOP */
 
 .cardTop{
 display:flex;
@@ -90,10 +87,10 @@ gap:16px;
 }
 
 .rankBox{
-width:70px;
-height:70px;
+width:72px;
+height:72px;
 
-border-radius:22px;
+border-radius:24px;
 
 display:flex;
 align-items:center;
@@ -120,13 +117,16 @@ display:flex;
 flex-direction:column;
 }
 
+/* NAME */
+
 .name{
-font-size:38px;
+font-size:40px;
 font-weight:900;
 line-height:1.1;
+letter-spacing:.5px;
 }
 
-/* TOP 5 NAME COLORS */
+/* TOP 5 NAME COLOR */
 
 .card:nth-child(1) .name{
 background:linear-gradient(to right,#fff7a1,#ffd700);
@@ -141,27 +141,29 @@ background:linear-gradient(to right,#ffffff,#8ec5ff);
 }
 
 .card:nth-child(3) .name{
-background:linear-gradient(to right,#ffcf8a,#ff7b00);
+background:linear-gradient(to right,#ffd6a5,#ff7b00);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .card:nth-child(4) .name{
-background:linear-gradient(to right,#b7ff8f,#52ff00);
+background:linear-gradient(to right,#c4ff9d,#00ff6a);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .card:nth-child(5) .name{
-background:linear-gradient(to right,#ffb0ff,#d400ff);
+background:linear-gradient(to right,#ffb3ff,#d946ef);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
+/* COUNTRY */
+
 .country{
 display:flex;
 align-items:center;
-gap:8px;
+gap:10px;
 
 margin-top:8px;
 
@@ -170,38 +172,47 @@ color:#dbeafe;
 }
 
 .flag{
-width:32px;
-height:32px;
+width:34px;
+height:34px;
 border-radius:50%;
 object-fit:cover;
 
-border:2px solid rgba(255,255,255,.2);
+border:2px solid rgba(255,255,255,.18);
 
 box-shadow:
-0 0 12px rgba(255,255,255,.25);
+0 0 14px rgba(34,197,94,.45);
 }
+
+/* RIGHT */
 
 .right{
 text-align:right;
 }
 
 .sms{
-font-size:58px;
+font-size:62px;
 font-weight:900;
 line-height:1;
 
-background:linear-gradient(to bottom,#7dd3fc,#60a5fa);
+background:
+linear-gradient(
+to bottom,
+#7dd3fc,
+#60a5fa
+);
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .earn{
-font-size:34px;
-font-weight:800;
+font-size:36px;
+font-weight:900;
 margin-top:8px;
 color:#22c55e;
-text-shadow:0 0 15px rgba(34,197,94,.35);
+
+text-shadow:
+0 0 18px rgba(34,197,94,.35);
 }
 
 /* PROGRESS */
@@ -239,12 +250,12 @@ border-radius:999px;
 
 .card{
 padding:18px;
-border-radius:24px;
+border-radius:26px;
 }
 
 .rankBox{
-width:56px;
-height:56px;
+width:54px;
+height:54px;
 font-size:24px;
 border-radius:18px;
 }
@@ -254,7 +265,7 @@ gap:12px;
 }
 
 .name{
-font-size:21px;
+font-size:20px;
 }
 
 .country{
