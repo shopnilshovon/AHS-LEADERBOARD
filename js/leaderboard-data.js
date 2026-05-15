@@ -1,6 +1,13 @@
 const users = [
 
 {
+name:"AHS_Rocky",
+country:"Bangladesh",
+sms:191,
+earning:3.444
+},
+
+{
 name:"AHS_Dip",
 country:"Bangladesh",
 sms:181,
@@ -15,13 +22,6 @@ earning:3.125
 },
 
 {
-name:"AHS_Rocky",
-country:"Bangladesh",
-sms:162,
-earning:2.922
-},
-
-{
 name:"AHS_jerry",
 country:"Bangladesh",
 sms:115,
@@ -31,8 +31,8 @@ earning:2.185
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:94,
-earning:1.338
+sms:97,
+earning:1.380
 },
 
 {
@@ -52,8 +52,8 @@ earning:1.211
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:63,
-earning:1.283
+sms:64,
+earning:1.308
 },
 
 {
@@ -87,4 +87,4 @@ earning:0.014
 ];
 
 const dailyUpdate =
-"15 May 2026 • 9:49 PM";
+"15 May 2026 • 10:32 PM";
