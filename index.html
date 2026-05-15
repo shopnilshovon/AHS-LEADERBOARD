@@ -4,21 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
-/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>AHS NETWORK GROUP</title>
-
-<!-- CSS FILES -->
 
 <link rel="stylesheet" href="./css/background.css">
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/cards.css">
-
-<!-- GOOGLE FONT -->
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
@@ -29,17 +21,11 @@ rel="stylesheet"
 
 <body>
 
-<!-- BACKGROUND -->
-
 <div class="bg">
 <div class="grid"></div>
 </div>
 
-<!-- MAIN CONTAINER -->
-
 <div class="container">
-
-<!-- HEADER -->
 
 <div class="header">
 
@@ -57,49 +43,52 @@ Premium SMS Leaderboard Dashboard
 
 </div>
 
-<!-- TOP STATS -->
-
 <div class="topbar">
 
 <div class="topCard">
-
-<h2 id="userCount">
-0
-</h2>
-
-<p>
-Total Users
-</p>
-
+<h2 id="userCount">0</h2>
+<p>Total Users</p>
 </div>
 
 <div class="topCard">
-
-<h2 id="totalSms">
-0
-</h2>
-
-<p>
-Total SMS
-</p>
-
+<h2 id="totalSms">0</h2>
+<p>Total SMS</p>
 </div>
 
 <div class="topCard">
-
-<h2 id="totalEarn">
-$0
-</h2>
-
-<p>
-Total Earnings
-</p>
-
+<h2 id="totalEarn">$0</h2>
+<p>Total Earnings</p>
 </div>
 
 </div>
 
-<!-- SEARCH -->
+<div class="switchWrap">
+
+<button class="switchBtn active" data-type="daily">
+🔥 Daily
+</button>
+
+<button class="switchBtn" data-type="weekly">
+📅 Weekly
+</button>
+
+<button class="switchBtn" data-type="alltime">
+👑 All Time
+</button>
+
+</div>
+
+<div class="updateBox">
+
+<div class="updateTitle">
+🔥 Latest Update
+</div>
+
+<div class="updateTime" id="updateTime">
+15 May 2026 • 5:18 PM
+</div>
+
+</div>
 
 <div class="searchWrap">
 
@@ -121,26 +110,18 @@ autocomplete="off"
 
 </div>
 
-<!-- LEADERBOARD -->
-
 <div id="list"></div>
 
-<!-- FOOTER -->
-
 <div class="footer">
-
-Powered By
-<span>
-AHS SHOVON
-</span>
-
+Powered By <span>AHS SHOVON</span>
 </div>
 
 </div>
 
-<!-- JAVASCRIPT -->
-
-<script src="./js/leaderboard-data.js"></script>
+<script src="./js/daily-data.js"></script>
+<script src="./js/weekly-data.js"></script>
+<script src="./js/alltime-data.js"></script>
+<script src="./js/update-info.js"></script>
 <script src="./js/commission-system.js"></script>
 <script src="./js/main.js"></script>
 
