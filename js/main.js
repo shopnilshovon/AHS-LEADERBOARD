@@ -1,7 +1,5 @@
 const list = document.getElementById("list");
 
-/* UPDATE TIME */
-
 const latestUpdate =
 "15 May 2026 • 5:18 PM";
 
@@ -9,9 +7,9 @@ const latestUpdate =
 
 const dailyData = users;
 
-const weeklyData = [...users];
+const weeklyData = weeklyUsers;
 
-const allTimeData = [...users];
+const allTimeData = alltimeUsers;
 
 let currentData = dailyData;
 
@@ -26,7 +24,7 @@ document.getElementById("weeklyBtn");
 const alltimeBtn =
 document.getElementById("alltimeBtn");
 
-/* BUTTON ACTIVE */
+/* ACTIVE BUTTON */
 
 function setActive(btn){
 
@@ -43,6 +41,19 @@ btn.classList.add("active");
 function render(data){
 
 list.innerHTML = "";
+
+if(data.length === 0){
+
+list.innerHTML = `
+<div class="notfound">
+<h2>❌ User Not Found</h2>
+<p>No leaderboard user available.</p>
+</div>
+`;
+
+return;
+
+}
 
 data.sort((a,b)=>b.sms-a.sms);
 
@@ -141,7 +152,7 @@ list.appendChild(card);
 
 }
 
-/* BUTTON CLICK */
+/* BUTTONS */
 
 dailyBtn.onclick = ()=>{
 
@@ -194,4 +205,5 @@ render(filtered);
 /* FIRST LOAD */
 
 render(dailyData);
+
 setActive(dailyBtn);
