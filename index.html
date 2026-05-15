@@ -12,9 +12,13 @@ content="width=device-width, initial-scale=1.0"
 
 <title>AHS NETWORK GROUP</title>
 
+<!-- CSS -->
+
 <link rel="stylesheet" href="./css/background.css">
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/cards.css">
+
+<!-- FONT -->
 
 <link
 href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
@@ -25,11 +29,17 @@ rel="stylesheet"
 
 <body>
 
+<!-- BACKGROUND -->
+
 <div class="bg">
 <div class="grid"></div>
 </div>
 
+<!-- MAIN -->
+
 <div class="container">
+
+<!-- HEADER -->
 
 <div class="header">
 
@@ -46,6 +56,8 @@ Premium SMS Leaderboard Dashboard
 </p>
 
 </div>
+
+<!-- TOPBAR -->
 
 <div class="topbar">
 
@@ -87,42 +99,54 @@ Total Earnings
 
 </div>
 
-<div class="modeWrap">
+<!-- FILTER BUTTONS -->
+
+<div class="filterWrap">
 
 <button
 id="dailyBtn"
-class="modeBtn active"
+class="filterBtn active"
 >
+
 🔥 Daily
+
 </button>
 
 <button
 id="weeklyBtn"
-class="modeBtn"
+class="filterBtn"
 >
+
 📅 Weekly
+
 </button>
 
 <button
 id="alltimeBtn"
-class="modeBtn"
+class="filterBtn"
 >
+
 👑 All Time
+
 </button>
 
 </div>
 
-<div class="updateCard">
+<!-- UPDATE -->
+
+<div class="updateBox">
 
 <h3>
 🔥 Latest Update
 </h3>
 
-<p id="updateTime">
-15 May 2026 • 8:00 PM
+<p id="updateText">
+Loading...
 </p>
 
 </div>
+
+<!-- SEARCH -->
 
 <div class="searchWrap">
 
@@ -144,7 +168,11 @@ autocomplete="off"
 
 </div>
 
+<!-- LIST -->
+
 <div id="list"></div>
+
+<!-- FOOTER -->
 
 <div class="footer">
 
@@ -157,10 +185,18 @@ AHS SHOVON
 
 </div>
 
-<script src="./js/leaderboard-data.js"></script>
-<script src="./js/weekly-data.js"></script>
-<script src="./js/alltime-data.js"></script>
+<!-- JAVASCRIPT -->
+
 <script src="./js/commission-system.js"></script>
+
+<script src="./js/update-info.js"></script>
+
+<script src="./js/leaderboard-data.js"></script>
+
+<script src="./js/weekly-data.js"></script>
+
+<script src="./js/alltime-data.js"></script>
+
 <script src="./js/main.js"></script>
 
 </body>
