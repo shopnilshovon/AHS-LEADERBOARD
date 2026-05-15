@@ -1,22 +1,65 @@
 const list = document.getElementById("list");
+const buttons = document.querySelectorAll(".switchBtn");
+const updateTime = document.getElementById("updateTime");
 
-users.sort((a,b)=>b.sms-a.sms);
+let currentUsers = dailyUsers;
+
+function loadLeaderboard(type){
+
+if(type === "daily"){
+currentUsers = dailyUsers;
+updateTime.innerText = updateInfo.daily;
+}
+
+if(type === "weekly"){
+currentUsers = weeklyUsers;
+updateTime.innerText = updateInfo.weekly;
+}
+
+if(type === "alltime"){
+currentUsers = alltimeUsers;
+updateTime.innerText = updateInfo.alltime;
+}
+
+render(currentUsers);
+
+}
+
+buttons.forEach(btn=>{
+
+btn.onclick = ()=>{
+
+buttons.forEach(x=>x.classList.remove("active"));
+
+btn.classList.add("active");
+
+loadLeaderboard(btn.dataset.type);
+
+};
+
+});
+
+function updateStats(data){
 
 document.getElementById("userCount").innerText =
-users.length;
+data.length;
 
 document.getElementById("totalSms").innerText =
-users.reduce((a,b)=>a+b.sms,0);
+data.reduce((a,b)=>a+b.sms,0);
 
 document.getElementById("totalEarn").innerText =
-"$" +
-users.reduce((a,b)=>
-a + calculateEarning(b.name,b.earning),0
+"$"+
+data.reduce((a,b)=>
+a+calculateEarning(b.name,b.earning),0
 ).toFixed(2);
+
+}
 
 function render(data){
 
 list.innerHTML = "";
+
+updateStats(data);
 
 if(data.length === 0){
 
@@ -42,7 +85,9 @@ return;
 
 const maxSms = Math.max(...data.map(x=>x.sms));
 
-data.forEach((u,index)=>{
+const sorted = [...data].sort((a,b)=>b.sms-a.sms);
+
+sorted.forEach((u,index)=>{
 
 const earn =
 calculateEarning(u.name,u.earning);
@@ -118,7 +163,9 @@ list.appendChild(card);
 
 }
 
-render(users);
+render(dailyUsers);
+
+updateTime.innerText = updateInfo.daily;
 
 document
 .getElementById("search")
@@ -128,7 +175,7 @@ const value =
 e.target.value.toLowerCase();
 
 const filtered =
-users.filter(x=>
+currentUsers.filter(x=>
 x.name.toLowerCase().includes(value)
 );
 
