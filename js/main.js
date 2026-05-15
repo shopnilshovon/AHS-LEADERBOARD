@@ -3,17 +3,25 @@ const list = document.getElementById("list");
 const latestUpdate =
 "15 May 2026 • 5:18 PM";
 
-/* DATA */
+/* =========================
+   DATA SOURCES
+========================= */
 
-const dailyData = users;
+const dailyData = typeof users !== "undefined"
+? users
+: [];
 
-const weeklyData = weeklyUsers;
+const weeklyData = typeof weeklyUsers !== "undefined"
+? weeklyUsers
+: [];
 
-const allTimeData = alltimeUsers;
+const allTimeData = typeof alltimeUsers !== "undefined"
+? alltimeUsers
+: [];
 
-let currentData = dailyData;
-
-/* BUTTONS */
+/* =========================
+   BUTTONS
+========================= */
 
 const dailyBtn =
 document.getElementById("dailyBtn");
@@ -24,7 +32,11 @@ document.getElementById("weeklyBtn");
 const alltimeBtn =
 document.getElementById("alltimeBtn");
 
-/* ACTIVE BUTTON */
+let currentData = dailyData;
+
+/* =========================
+   ACTIVE BUTTON
+========================= */
 
 function setActive(btn){
 
@@ -36,26 +48,45 @@ btn.classList.add("active");
 
 }
 
-/* RENDER */
+/* =========================
+   RENDER FUNCTION
+========================= */
 
 function render(data){
 
 list.innerHTML = "";
 
-if(data.length === 0){
+if(!data || data.length === 0){
 
 list.innerHTML = `
+
 <div class="notfound">
-<h2>❌ User Not Found</h2>
-<p>No leaderboard user available.</p>
+
+<h2>
+❌ No Leaderboard Data
+</h2>
+
+<p>
+No users available.
+</p>
+
 </div>
+
 `;
+
+document.getElementById("userCount").innerText = 0;
+document.getElementById("totalSms").innerText = 0;
+document.getElementById("totalEarn").innerText = "$0";
 
 return;
 
 }
 
+/* SORT */
+
 data.sort((a,b)=>b.sms-a.sms);
+
+/* TOP STATS */
 
 document.getElementById("userCount").innerText =
 data.length;
@@ -69,11 +100,17 @@ data.reduce((a,b)=>
 a + calculateEarning(b.name,b.earning),0
 ).toFixed(2);
 
+/* UPDATE TIME */
+
 document.getElementById("updateTime").innerText =
 latestUpdate;
 
+/* MAX SMS */
+
 const maxSms =
 Math.max(...data.map(x=>x.sms));
+
+/* CARDS */
 
 data.forEach((u,index)=>{
 
@@ -95,7 +132,7 @@ card.innerHTML = `
 <div class="left">
 
 <div class="rankBox">
-${index+1}
+${index + 1}
 </div>
 
 <div class="userInfo">
@@ -152,9 +189,11 @@ list.appendChild(card);
 
 }
 
-/* BUTTONS */
+/* =========================
+   BUTTON EVENTS
+========================= */
 
-dailyBtn.onclick = ()=>{
+dailyBtn.addEventListener("click",()=>{
 
 currentData = dailyData;
 
@@ -162,9 +201,9 @@ setActive(dailyBtn);
 
 render(currentData);
 
-};
+});
 
-weeklyBtn.onclick = ()=>{
+weeklyBtn.addEventListener("click",()=>{
 
 currentData = weeklyData;
 
@@ -172,9 +211,9 @@ setActive(weeklyBtn);
 
 render(currentData);
 
-};
+});
 
-alltimeBtn.onclick = ()=>{
+alltimeBtn.addEventListener("click",()=>{
 
 currentData = allTimeData;
 
@@ -182,9 +221,11 @@ setActive(alltimeBtn);
 
 render(currentData);
 
-};
+});
 
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 
 document
 .getElementById("search")
@@ -202,8 +243,10 @@ render(filtered);
 
 });
 
-/* FIRST LOAD */
-
-render(dailyData);
+/* =========================
+   FIRST LOAD
+========================= */
 
 setActive(dailyBtn);
+
+render(dailyData);
