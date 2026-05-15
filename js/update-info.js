@@ -1,7 +1,28 @@
-const updateInfo = {
+function getBangladeshTime(){
 
-daily:"15 May 2026 • 8:00 PM",
-weekly:"15 May 2026 • 8:00 PM",
-alltime:"15 May 2026 • 5:18 PM"
+const now = new Date();
 
+const options = {
+timeZone: "Asia/Dhaka",
+year: "numeric",
+month: "long",
+day: "numeric",
+hour: "numeric",
+minute: "2-digit",
+hour12: true
 };
+
+return now.toLocaleString("en-US",options);
+
+}
+
+/* AUTO UPDATE TIMES */
+
+const dailyUpdate =
+getBangladeshTime();
+
+const weeklyUpdate =
+getBangladeshTime();
+
+const alltimeUpdate =
+getBangladeshTime();
