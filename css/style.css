@@ -145,21 +145,20 @@ color:#dbeafe;
 opacity:.8;
 }
 
-/* SWITCH BUTTON */
+/* MODE BUTTONS */
 
-.switchWrap{
+.modeWrap{
 display:flex;
-gap:12px;
-margin-bottom:22px;
+gap:14px;
+margin-bottom:25px;
 }
 
-.switchBtn{
+.modeBtn{
 flex:1;
-height:60px;
+height:65px;
 
 border:none;
 outline:none;
-cursor:pointer;
 
 border-radius:22px;
 
@@ -173,15 +172,19 @@ rgba(15,23,55,.92)
 border:1px solid rgba(255,255,255,.08);
 
 color:white;
+
 font-size:18px;
 font-weight:700;
 
+cursor:pointer;
+
 transition:.3s;
 
-backdrop-filter:blur(18px);
+box-shadow:
+0 0 20px rgba(0,0,0,.25);
 }
 
-.switchBtn.active{
+.modeBtn.active{
 
 background:
 linear-gradient(
@@ -192,17 +195,16 @@ linear-gradient(
 );
 
 box-shadow:
-0 0 25px rgba(124,58,237,.35);
-
+0 0 25px rgba(124,58,237,.45);
 }
 
-/* UPDATE BOX */
+/* UPDATE CARD */
 
-.updateBox{
-
-padding:20px;
-
+.updateCard{
+padding:22px;
 border-radius:24px;
+
+margin-bottom:25px;
 
 background:
 linear-gradient(
@@ -213,21 +215,20 @@ rgba(15,23,55,.92)
 
 border:1px solid rgba(255,255,255,.08);
 
-margin-bottom:25px;
-
+box-shadow:
+0 0 20px rgba(0,0,0,.25);
 }
 
-.updateTitle{
-font-size:16px;
-font-weight:700;
-color:#facc15;
+.updateCard h3{
+font-size:20px;
 margin-bottom:10px;
+color:#facc15;
 }
 
-.updateTime{
-font-size:22px;
-font-weight:800;
-color:#ffffff;
+.updateCard p{
+font-size:18px;
+font-weight:700;
+color:white;
 }
 
 /* SEARCH */
@@ -289,6 +290,22 @@ font-size:22px;
 color:#94a3b8;
 }
 
+/* NOT FOUND */
+
+.notfound{
+padding:40px 20px;
+text-align:center;
+}
+
+.notfound h2{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.notfound p{
+color:#94a3b8;
+}
+
 /* FOOTER */
 
 .footer{
@@ -343,23 +360,27 @@ border-radius:20px;
 font-size:34px;
 }
 
-.switchWrap{
+.modeWrap{
 gap:10px;
 }
 
-.switchBtn{
-height:54px;
-font-size:14px;
+.modeBtn{
+height:56px;
+font-size:15px;
 border-radius:18px;
 }
 
-.updateBox{
+.updateCard{
 padding:18px;
 border-radius:20px;
 }
 
-.updateTime{
-font-size:17px;
+.updateCard h3{
+font-size:18px;
+}
+
+.updateCard p{
+font-size:15px;
 }
 
 .searchInput{
