@@ -4,23 +4,38 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+/>
 
 <title>AHS NETWORK GROUP</title>
 
-<link rel="stylesheet" href="css/background.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/cards.css">
+<!-- CSS FILES -->
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/background.css">
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/cards.css">
+
+<!-- GOOGLE FONT -->
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+rel="stylesheet"
+/>
 
 </head>
 
 <body>
 
+<!-- BACKGROUND -->
+
 <div class="bg">
 <div class="grid"></div>
 </div>
+
+<!-- MAIN CONTAINER -->
 
 <div class="container">
 
@@ -42,23 +57,44 @@ Premium SMS Leaderboard Dashboard
 
 </div>
 
-<!-- TOPBAR -->
+<!-- TOP STATS -->
 
 <div class="topbar">
 
 <div class="topCard">
-<h2 id="userCount">0</h2>
-<p>Total Users</p>
+
+<h2 id="userCount">
+0
+</h2>
+
+<p>
+Total Users
+</p>
+
 </div>
 
 <div class="topCard">
-<h2 id="totalSms">0</h2>
-<p>Total SMS</p>
+
+<h2 id="totalSms">
+0
+</h2>
+
+<p>
+Total SMS
+</p>
+
 </div>
 
 <div class="topCard">
-<h2 id="totalEarn">$0</h2>
-<p>Total Earnings</p>
+
+<h2 id="totalEarn">
+$0
+</h2>
+
+<p>
+Total Earnings
+</p>
+
 </div>
 
 </div>
@@ -78,29 +114,35 @@ type="text"
 id="search"
 class="searchInput"
 placeholder="Search user..."
->
+autocomplete="off"
+/>
 
 </div>
 
 </div>
 
-<!-- LEADERBOARD LIST -->
+<!-- LEADERBOARD -->
 
 <div id="list"></div>
 
 <!-- FOOTER -->
 
 <div class="footer">
-Powered By <span>AHS SHOVON</span>
-</div>
+
+Powered By
+<span>
+AHS SHOVON
+</span>
 
 </div>
 
-<!-- JS FILES -->
+</div>
 
-<script src="js/leaderboard-data.js"></script>
-<script src="js/commission-system.js"></script>
-<script src="js/main.js"></script>
+<!-- JAVASCRIPT -->
+
+<script src="./js/leaderboard-data.js"></script>
+<script src="./js/commission-system.js"></script>
+<script src="./js/main.js"></script>
 
 </body>
 </html>
