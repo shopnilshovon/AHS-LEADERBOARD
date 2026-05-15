@@ -1,24 +1,24 @@
 const users = [
 
 {
-name:"TTsohanur",
+name:"AHS_Dip",
 country:"Bangladesh",
-sms:157,
-earning:3.011
+sms:175,
+earning:3.295
 },
 
 {
-name:"AHS_Dip",
+name:"TTsohanur",
 country:"Bangladesh",
-sms:147,
-earning:2.763
+sms:163,
+earning:3.125
 },
 
 {
 name:"AHS_jerry",
 country:"Bangladesh",
-sms:85,
-earning:1.615
+sms:100,
+earning:1.900
 },
 
 {
@@ -52,8 +52,8 @@ earning:0.897
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:45,
-earning:0.952
+sms:60,
+earning:1.227
 },
 
 {
