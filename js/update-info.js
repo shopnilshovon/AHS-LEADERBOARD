@@ -1,28 +1,75 @@
-function getBangladeshTime(){
+/* =========================
+   AUTO UPDATE INFO SYSTEM
+========================= */
 
-const now = new Date();
+/*
+এই ফাইল auto detect করবে
+কখন leaderboard update হয়েছে।
 
-const options = {
-timeZone: "Asia/Dhaka",
-year: "numeric",
-month: "long",
-day: "numeric",
-hour: "numeric",
-minute: "2-digit",
-hour12: true
-};
+তুমি শুধু যেকোনো leaderboard file
+save/update করলেই time auto change হবে।
+*/
 
-return now.toLocaleString("en-US",options);
-
-}
-
-/* AUTO UPDATE TIMES */
+/* DAILY UPDATE */
 
 const dailyUpdate =
-getBangladeshTime();
+new Date(document.lastModified)
+.toLocaleString("en-US",{
+
+month:"long",
+day:"numeric",
+year:"numeric",
+
+hour:"numeric",
+minute:"2-digit",
+
+hour12:true
+
+});
+
+/* WEEKLY UPDATE */
 
 const weeklyUpdate =
-getBangladeshTime();
+new Date(document.lastModified)
+.toLocaleString("en-US",{
+
+month:"long",
+day:"numeric",
+year:"numeric",
+
+hour:"numeric",
+minute:"2-digit",
+
+hour12:true
+
+});
+
+/* ALL TIME UPDATE */
 
 const alltimeUpdate =
-getBangladeshTime();
+new Date(document.lastModified)
+.toLocaleString("en-US",{
+
+month:"long",
+day:"numeric",
+year:"numeric",
+
+hour:"numeric",
+minute:"2-digit",
+
+hour12:true
+
+});
+
+/* =========================
+   OPTIONAL CUSTOM FORMAT
+========================= */
+
+/*
+যদি future এ custom date দিতে চাও:
+
+const dailyUpdate =
+"15 May 2026 • 8:35 PM";
+
+এভাবেও দিতে পারবা।
+*/
