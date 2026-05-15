@@ -3,8 +3,8 @@ const users = [
 {
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:818,
-earning:13.905
+sms:8286,
+earning:5
 },
 
 {
