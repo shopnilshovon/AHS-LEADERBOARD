@@ -1,39 +1,43 @@
 const list = document.getElementById("list");
 
-const dailyBtn = document.getElementById("dailyBtn");
-const weeklyBtn = document.getElementById("weeklyBtn");
-const alltimeBtn = document.getElementById("alltimeBtn");
+const dailyBtn =
+document.getElementById("dailyBtn");
 
-const userCount = document.getElementById("userCount");
-const totalSms = document.getElementById("totalSms");
-const totalEarn = document.getElementById("totalEarn");
+const weeklyBtn =
+document.getElementById("weeklyBtn");
 
-const updateText = document.getElementById("updateText");
+const alltimeBtn =
+document.getElementById("alltimeBtn");
+
+const updateText =
+document.getElementById("updateText");
 
 let currentData = users;
 
-/* UPDATE TIME */
+/* =========================
+   UPDATE INFO
+========================= */
 
 if(typeof dailyUpdate !== "undefined"){
-updateText.innerText = dailyUpdate;
+
+updateText.innerText =
+dailyUpdate;
+
 }
 
-/* SORT */
-
-function sortData(data){
-return [...data].sort((a,b)=>b.sms-a.sms);
-}
-
-/* TOP INFO */
+/* =========================
+   UPDATE STATS
+========================= */
 
 function updateStats(data){
 
-userCount.innerText = data.length;
+document.getElementById("userCount").innerText =
+data.length;
 
-totalSms.innerText =
+document.getElementById("totalSms").innerText =
 data.reduce((a,b)=>a+b.sms,0);
 
-totalEarn.innerText =
+document.getElementById("totalEarn").innerText =
 "$" +
 data.reduce((a,b)=>
 a + calculateEarning(b.name,b.earning)
@@ -41,13 +45,15 @@ a + calculateEarning(b.name,b.earning)
 
 }
 
-/* RENDER */
+/* =========================
+   RENDER LEADERBOARD
+========================= */
 
 function render(data){
 
 list.innerHTML = "";
 
-if(data.length === 0){
+if(!data || data.length === 0){
 
 list.innerHTML = `
 
@@ -65,10 +71,16 @@ No users available.
 
 `;
 
+updateStats([]);
+
 return;
+
 }
 
-const sorted = sortData(data);
+/* SORT */
+
+const sorted =
+[...data].sort((a,b)=>b.sms-a.sms);
 
 const maxSms =
 Math.max(...sorted.map(x=>x.sms));
@@ -76,12 +88,16 @@ Math.max(...sorted.map(x=>x.sms));
 sorted.forEach((u,index)=>{
 
 const earn =
-calculateEarning(u.name,u.earning);
+calculateEarning(
+u.name,
+u.earning
+);
 
 const percent =
-(u.sms / maxSms) * 100;
+(u.sms/maxSms)*100;
 
-const card = document.createElement("div");
+const card =
+document.createElement("div");
 
 card.className = "card";
 
@@ -92,7 +108,7 @@ card.innerHTML = `
 <div class="left">
 
 <div class="rankBox">
-${index + 1}
+${index+1}
 </div>
 
 <div class="userInfo">
@@ -151,9 +167,15 @@ updateStats(sorted);
 
 }
 
-render(currentData);
+/* =========================
+   DEFAULT LOAD
+========================= */
 
-/* SEARCH */
+render(users);
+
+/* =========================
+   SEARCH
+========================= */
 
 document
 .getElementById("search")
@@ -163,26 +185,36 @@ const value =
 e.target.value.toLowerCase();
 
 const filtered =
-currentData.filter(x=>
-x.name.toLowerCase().includes(value)
+currentData.filter(user=>
+user.name
+.toLowerCase()
+.includes(value)
 );
 
 render(filtered);
 
 });
 
-/* BUTTONS */
+/* =========================
+   BUTTON ACTIVE SYSTEM
+========================= */
 
 function setActive(btn){
 
 [dailyBtn,weeklyBtn,alltimeBtn]
-.forEach(x=>x.classList.remove("active"));
+.forEach(button=>{
+
+button.classList.remove("active");
+
+});
 
 btn.classList.add("active");
 
 }
 
-/* DAILY */
+/* =========================
+   DAILY BUTTON
+========================= */
 
 dailyBtn.addEventListener("click",()=>{
 
@@ -191,14 +223,19 @@ currentData = users;
 render(currentData);
 
 if(typeof dailyUpdate !== "undefined"){
-updateText.innerText = dailyUpdate;
+
+updateText.innerText =
+dailyUpdate;
+
 }
 
 setActive(dailyBtn);
 
 });
 
-/* WEEKLY */
+/* =========================
+   WEEKLY BUTTON
+========================= */
 
 weeklyBtn.addEventListener("click",()=>{
 
@@ -211,27 +248,35 @@ render(currentData);
 }
 
 if(typeof weeklyUpdate !== "undefined"){
-updateText.innerText = weeklyUpdate;
+
+updateText.innerText =
+weeklyUpdate;
+
 }
 
 setActive(weeklyBtn);
 
 });
 
-/* ALL TIME */
+/* =========================
+   ALL TIME BUTTON
+========================= */
 
 alltimeBtn.addEventListener("click",()=>{
 
-if(typeof allTimeUsers !== "undefined"){
+if(typeof alltimeUsers !== "undefined"){
 
-currentData = allTimeUsers;
+currentData = alltimeUsers;
 
 render(currentData);
 
 }
 
-if(typeof allTimeUpdate !== "undefined"){
-updateText.innerText = allTimeUpdate;
+if(typeof alltimeUpdate !== "undefined"){
+
+updateText.innerText =
+alltimeUpdate;
+
 }
 
 setActive(alltimeBtn);
