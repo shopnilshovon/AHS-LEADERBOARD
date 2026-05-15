@@ -400,3 +400,187 @@ font-size:14px;
 }
 
 }
+
+/* =========================
+FILTER BUTTONS
+========================= */
+
+.filterWrap{
+display:flex;
+gap:16px;
+margin-bottom:28px;
+}
+
+.filterBtn{
+flex:1;
+
+height:72px;
+
+border:none;
+outline:none;
+
+border-radius:24px;
+
+font-size:18px;
+font-weight:800;
+
+color:white;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+135deg,
+rgba(8,15,40,.92),
+rgba(15,23,55,.92)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+box-shadow:
+0 0 20px rgba(0,0,0,.25);
+}
+
+.filterBtn.active{
+
+background:
+linear-gradient(
+135deg,
+#2563eb,
+#7c3aed,
+#d946ef
+);
+
+box-shadow:
+0 0 30px rgba(168,85,247,.45);
+
+}
+
+/* =========================
+UPDATE BOX
+========================= */
+
+.updateBox{
+
+padding:28px;
+
+border-radius:28px;
+
+margin-bottom:28px;
+
+background:
+linear-gradient(
+135deg,
+rgba(8,15,40,.92),
+rgba(15,23,55,.92)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 25px rgba(0,0,0,.25);
+
+}
+
+.updateBox h3{
+
+font-size:20px;
+font-weight:800;
+
+color:#facc15;
+
+margin-bottom:14px;
+
+}
+
+.updateBox p{
+
+font-size:18px;
+font-weight:700;
+
+color:white;
+
+}
+
+/* =========================
+NOT FOUND
+========================= */
+
+.notfound{
+
+text-align:center;
+
+padding:80px 20px;
+
+}
+
+.notfound h2{
+
+font-size:42px;
+font-weight:900;
+
+margin-bottom:12px;
+
+}
+
+.notfound p{
+
+font-size:18px;
+color:#94a3b8;
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.filterWrap{
+gap:10px;
+}
+
+.filterBtn{
+
+height:58px;
+
+font-size:15px;
+
+border-radius:18px;
+
+}
+
+.updateBox{
+
+padding:22px;
+border-radius:22px;
+
+}
+
+.updateBox h3{
+
+font-size:18px;
+
+}
+
+.updateBox p{
+
+font-size:16px;
+
+}
+
+.notfound h2{
+
+font-size:30px;
+
+}
+
+.notfound p{
+
+font-size:15px;
+
+}
+
+}
