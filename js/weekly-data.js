@@ -1,38 +1,45 @@
 const weeklyUsers = [
 
 {
-name:"AHS_Dip",
+name:"AHS_Rocky",
 country:"Bangladesh",
-sms:853,
-earning:14.554
+sms:897,
+earning:15.776
 },
 
 {
-name:"AHS_Rocky",
+name:"AHS_Dip",
 country:"Bangladesh",
-sms:757,
-earning:13.530
+sms:871,
+earning:14.833
+},
+
+{
+name:"SM_SHAKIB",
+country:"Bangladesh",
+sms:619,
+earning:11.356
 },
 
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:737,
-earning:10.723
+sms:609,
+earning:10.529
 },
 
 {
 name:"tlttoufiq909",
 country:"Bangladesh",
-sms:539,
-earning:8.949
+sms:565,
+earning:9.367
 },
 
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:528,
-earning:10.551
+sms:547,
+earning:10.817
 },
 
 {
@@ -43,24 +50,17 @@ earning:6.520
 },
 
 {
-name:"SM_SHAKIB",
-country:"Bangladesh",
-sms:389,
-earning:7.302
-},
-
-{
 name:"AHS_Shanto",
 country:"Bangladesh",
-sms:332,
-earning:6.190
+sms:365,
+earning:6.805
 },
 
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:235,
-earning:4.428
+sms:247,
+earning:4.611
 },
 
 {
@@ -87,8 +87,8 @@ earning:1.871
 {
 name:"AH_Sujon",
 country:"Bangladesh",
-sms:70,
-earning:1.230
+sms:78,
+earning:1.382
 },
 
 {
@@ -108,8 +108,8 @@ earning:0.945
 {
 name:"AH_Limon",
 country:"Bangladesh",
-sms:7,
-earning:0.133
+sms:10,
+earning:0.178
 },
 
 {
@@ -136,10 +136,9 @@ earning:0.014
 ];
 
 /*
-Unnamed SMS Added To SHOVON
-154 + 36 = 190 SMS
-0.717 earning added
+Unnamed SMS with 0 earning NOT added
+Only named users counted
 */
 
 const weeklyUpdate =
-"16 May 2026 • 6:44 AM";
+"16 May 2026 • 12:05 AM";
