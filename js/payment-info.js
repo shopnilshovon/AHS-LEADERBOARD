@@ -55,13 +55,13 @@ bkash:"",
 binance:"794889158"
 },
 
+"SM_SHAKIB":{
+bkash:"",
+binance:"734913094"
+},
 /* NO PAYMENT INFO */
 
 "AH_Rana":{
-message:"Please add your payment details."
-},
-
-"SM_SHAKIB":{
 message:"Please add your payment details."
 },
 
