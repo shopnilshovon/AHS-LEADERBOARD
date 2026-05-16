@@ -3,57 +3,64 @@ const users = [
 {
 name:"SM_SHAKIB",
 country:"Bangladesh",
-sms:260,
-earning:4.644
+sms:263,
+earning:4.705
 },
 
 {
 name:"AHS_Rocky",
 country:"Bangladesh",
-sms:140,
-earning:2.246
+sms:157,
+earning:2.552
 },
 
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:64,
-earning:1.249
+sms:100,
+earning:1.983
 },
 
 {
 name:"AHS_Shanto",
 country:"Bangladesh",
-sms:35,
-earning:0.655
-},
-
-{
-name:"tlttoufiq909",
-country:"Bangladesh",
-sms:30,
-earning:0.490
+sms:49,
+earning:0.887
 },
 
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:19,
-earning:0.266
+sms:45,
+earning:0.708
 },
 
 {
-name:"AHS_Dip",
+name:"tlttoufiq909",
 country:"Bangladesh",
-sms:18,
-earning:0.279
+sms:39,
+earning:0.660
+},
+
+{
+name:"AHS_jerry",
+country:"Bangladesh",
+sms:33,
+earning:0.675
 },
 
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:12,
-earning:0.183
+sms:19,
+earning:0.309
+},
+
+{
+name:"AHS_Dip",
+country:"Bangladesh",
+sms:19,
+earning:0.298
 },
 
 {
@@ -64,10 +71,10 @@ earning:0.171
 },
 
 {
-name:"AHS_jerry",
+name:"AH_Najmul",
 country:"Bangladesh",
 sms:6,
-earning:0.150
+earning:0.090
 },
 
 {
@@ -88,10 +95,10 @@ earning:0.045
 
 /*
 Unnamed SMS with earning added to SHOVON
-17 SMS + $0.272
+29 SMS + $0.460
 
 Unnamed SMS with 0 earning NOT added
 */
 
 const dailyUpdate =
-"16 May 2026 • 12:32 PM";
+"16 May 2026 • 5:52 PM";
