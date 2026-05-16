@@ -12,7 +12,33 @@ const alltimeBtn = document.getElementById("alltimeBtn");
 
 const updateText = document.getElementById("updateText");
 
-/* SAFE DATA */
+/* PAYMENT MODAL */
+
+const paymentModal =
+document.getElementById("paymentModal");
+
+const closePayment =
+document.getElementById("closePayment");
+
+const paymentName =
+document.getElementById("paymentName");
+
+const bkashCard =
+document.getElementById("bkashCard");
+
+const binanceCard =
+document.getElementById("binanceCard");
+
+const bkashText =
+document.getElementById("bkashText");
+
+const binanceText =
+document.getElementById("binanceText");
+
+const paymentMessage =
+document.getElementById("paymentMessage");
+
+/* SAFE DATA LOAD */
 
 const dailyData =
 typeof users !== "undefined"
@@ -29,11 +55,11 @@ typeof alltimeUsers !== "undefined"
 ? alltimeUsers
 : [];
 
-/* CURRENT */
+/* CURRENT DATA */
 
 let currentData = [...dailyData];
 
-/* UPDATE */
+/* UPDATE INFO */
 
 function setUpdate(type){
 
@@ -66,7 +92,7 @@ typeof alltimeUpdate !== "undefined"
 
 }
 
-/* ACTIVE */
+/* ACTIVE BUTTON */
 
 function setActive(btn){
 
@@ -78,12 +104,11 @@ btn.classList.add("active");
 
 }
 
-/* TOP */
+/* TOP INFO */
 
 function updateTop(data){
 
-userCount.innerText =
-data.length;
+userCount.innerText = data.length;
 
 totalSms.innerText =
 data.reduce((a,b)=>a+b.sms,0);
@@ -98,95 +123,136 @@ b.earning
 
 }
 
-/* PAYMENT INFO */
+/* PAYMENT POPUP */
 
-function openPaymentInfo(name){
+function showPaymentInfo(username){
+
+if(
+typeof paymentInfo === "undefined"
+){
+return;
+}
 
 const info =
-paymentInfo[name];
+paymentInfo[username];
+
+paymentName.innerText =
+username;
+
+paymentMessage.style.display =
+"none";
+
+bkashCard.style.display =
+"block";
+
+binanceCard.style.display =
+"block";
 
 if(!info){
 
-alert("No payment info added.");
+bkashCard.style.display =
+"none";
+
+binanceCard.style.display =
+"none";
+
+paymentMessage.style.display =
+"block";
+
+paymentMessage.innerText =
+"No payment info added yet.";
+
+paymentModal.classList.add("show");
 
 return;
 
 }
 
-const oldModal =
-document.querySelector(".paymentModal");
+/* BKASH */
 
-if(oldModal){
+if(info.bkash){
 
-oldModal.remove();
+bkashText.innerText =
+info.bkash;
 
-}
+bkashCard.style.display =
+"block";
 
-const modal =
-document.createElement("div");
+}else{
 
-modal.className =
-"paymentModal";
-
-modal.innerHTML = `
-
-<div class="paymentBox">
-
-<button
-class="closePayment"
-onclick="closePaymentInfo()"
->
-×
-</button>
-
-<h2>
-${name}
-</h2>
-
-<div class="paymentItem">
-
-<h3>
-💳 Bkash Number
-</h3>
-
-<p>
-${info.bkash}
-</p>
-
-</div>
-
-<div class="paymentItem">
-
-<h3>
-🟡 Binance UID
-</h3>
-
-<p>
-${info.binance}
-</p>
-
-</div>
-
-</div>
-
-`;
-
-document.body.appendChild(modal);
+bkashCard.style.display =
+"none";
 
 }
 
-function closePaymentInfo(){
+/* BINANCE */
 
-const modal =
-document.querySelector(".paymentModal");
+if(info.binance){
 
-if(modal){
+binanceText.innerText =
+info.binance;
 
-modal.remove();
+binanceCard.style.display =
+"block";
+
+}else{
+
+binanceCard.style.display =
+"none";
+
+}
+
+/* MESSAGE */
+
+if(info.message){
+
+bkashCard.style.display =
+"none";
+
+binanceCard.style.display =
+"none";
+
+paymentMessage.style.display =
+"block";
+
+paymentMessage.innerText =
+info.message;
+
+}
+
+paymentModal.classList.add("show");
+
+}
+
+/* CLOSE MODAL */
+
+closePayment.addEventListener(
+"click",
+()=>{
+
+paymentModal.classList.remove(
+"show"
+);
+
+}
+);
+
+paymentModal.addEventListener(
+"click",
+(e)=>{
+
+if(
+e.target === paymentModal
+){
+
+paymentModal.classList.remove(
+"show"
+);
 
 }
 
 }
+);
 
 /* RENDER */
 
@@ -242,6 +308,19 @@ document.createElement("div");
 
 card.className = "card";
 
+/* CLICK EVENT */
+
+card.addEventListener(
+"click",
+()=>{
+
+showPaymentInfo(
+u.name
+);
+
+}
+);
+
 card.innerHTML = `
 
 <div class="cardTop">
@@ -254,10 +333,7 @@ ${index + 1}
 
 <div class="userInfo">
 
-<div
-class="name clickableName"
-onclick="openPaymentInfo('${u.name}')"
->
+<div class="name">
 ${u.name}
 </div>
 
@@ -311,9 +387,12 @@ list.appendChild(card);
 
 /* DAILY */
 
-dailyBtn.addEventListener("click",()=>{
+dailyBtn.addEventListener(
+"click",
+()=>{
 
-currentData = [...dailyData];
+currentData =
+[...dailyData];
 
 render(currentData);
 
@@ -321,13 +400,17 @@ setActive(dailyBtn);
 
 setUpdate("daily");
 
-});
+}
+);
 
 /* WEEKLY */
 
-weeklyBtn.addEventListener("click",()=>{
+weeklyBtn.addEventListener(
+"click",
+()=>{
 
-currentData = [...weeklyDataSafe];
+currentData =
+[...weeklyDataSafe];
 
 render(currentData);
 
@@ -335,13 +418,17 @@ setActive(weeklyBtn);
 
 setUpdate("weekly");
 
-});
+}
+);
 
-/* ALLTIME */
+/* ALL TIME */
 
-alltimeBtn.addEventListener("click",()=>{
+alltimeBtn.addEventListener(
+"click",
+()=>{
 
-currentData = [...alltimeDataSafe];
+currentData =
+[...alltimeDataSafe];
 
 render(currentData);
 
@@ -349,11 +436,14 @@ setActive(alltimeBtn);
 
 setUpdate("alltime");
 
-});
+}
+);
 
 /* SEARCH */
 
-searchInput.addEventListener("input",(e)=>{
+searchInput.addEventListener(
+"input",
+(e)=>{
 
 const value =
 e.target.value.toLowerCase();
@@ -366,9 +456,10 @@ x.name.toLowerCase()
 
 render(filtered);
 
-});
+}
+);
 
-/* DEFAULT */
+/* DEFAULT LOAD */
 
 render(currentData);
 
