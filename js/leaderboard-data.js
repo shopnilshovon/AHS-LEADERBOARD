@@ -17,8 +17,8 @@ earning:2.246
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:47,
-earning:0.977
+sms:64,
+earning:1.25
 },
 
 {
