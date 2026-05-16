@@ -6,6 +6,8 @@ font-family:'Poppins',sans-serif;
 min-height:100vh;
 }
 
+/* BACKGROUND */
+
 .bg{
 position:fixed;
 inset:0;
@@ -16,51 +18,217 @@ background:
 linear-gradient(
 180deg,
 #020617 0%,
-#050816 35%,
+#050816 30%,
 #0b1020 65%,
 #14061f 100%
 );
+
+background-size:400% 400%;
+
+animation:
+aurora 18s ease infinite;
+
 }
+
+/* AURORA */
+
+@keyframes aurora{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* FLOATING GLOW */
 
 .bg::before{
 content:"";
+
 position:absolute;
+
 top:-300px;
 left:-250px;
+
 width:700px;
 height:700px;
 
 background:
-radial-gradient(circle,
-rgba(37,99,235,.28),
-transparent 70%);
+radial-gradient(
+circle,
+rgba(37,99,235,.30),
+transparent 70%
+);
 
-filter:blur(90px);
+filter:blur(100px);
+
+animation:
+floatGlow1 14s ease-in-out infinite;
+
+mix-blend-mode:screen;
+
 }
 
 .bg::after{
 content:"";
+
 position:absolute;
+
 bottom:-300px;
 right:-250px;
+
 width:700px;
 height:700px;
 
 background:
-radial-gradient(circle,
-rgba(168,85,247,.25),
-transparent 70%);
+radial-gradient(
+circle,
+rgba(168,85,247,.28),
+transparent 70%
+);
 
-filter:blur(90px);
+filter:blur(100px);
+
+animation:
+floatGlow2 18s ease-in-out infinite;
+
+mix-blend-mode:screen;
+
 }
+
+@keyframes floatGlow1{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(60px,-40px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+@keyframes floatGlow2{
+
+0%{
+transform:translate(0,0);
+}
+
+50%{
+transform:translate(-60px,40px);
+}
+
+100%{
+transform:translate(0,0);
+}
+
+}
+
+/* GRID */
 
 .grid{
 position:absolute;
 inset:0;
 
 background-image:
-linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+linear-gradient(
+rgba(255,255,255,.025) 1px,
+transparent 1px
+),
+
+linear-gradient(
+90deg,
+rgba(255,255,255,.025) 1px,
+transparent 1px
+);
 
 background-size:40px 40px;
+
+animation:
+gridMove 22s linear infinite;
+
+}
+
+/* GRID MOVE */
+
+@keyframes gridMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(40px);
+}
+
+}
+
+/* NOISE TEXTURE */
+
+.grid::after{
+content:"";
+
+position:absolute;
+inset:0;
+
+opacity:.035;
+
+background-image:
+url("https://grainy-gradients.vercel.app/noise.svg");
+
+pointer-events:none;
+
+mix-blend-mode:soft-light;
+
+}
+
+/* EXTRA DARK OVERLAY */
+
+.bgOverlay{
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,.08),
+rgba(0,0,0,.18)
+);
+
+pointer-events:none;
+}
+
+/* MOBILE OPTIMIZATION */
+
+@media(max-width:768px){
+
+.bg::before,
+.bg::after{
+
+width:500px;
+height:500px;
+
+filter:blur(80px);
+
+}
+
+.grid{
+
+background-size:32px 32px;
+
+}
+
 }
