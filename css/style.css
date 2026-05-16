@@ -145,22 +145,30 @@ color:#dbeafe;
 opacity:.8;
 }
 
-/* MODE BUTTONS */
+/* FILTER BUTTONS */
 
-.modeWrap{
+.filterWrap{
 display:flex;
-gap:14px;
-margin-bottom:25px;
+gap:16px;
+margin-bottom:28px;
 }
 
-.modeBtn{
+.filterBtn{
 flex:1;
-height:65px;
+
+height:72px;
 
 border:none;
 outline:none;
 
-border-radius:22px;
+border-radius:24px;
+
+font-size:18px;
+font-weight:800;
+
+color:white;
+
+cursor:pointer;
 
 background:
 linear-gradient(
@@ -171,20 +179,13 @@ rgba(15,23,55,.92)
 
 border:1px solid rgba(255,255,255,.08);
 
-color:white;
-
-font-size:18px;
-font-weight:700;
-
-cursor:pointer;
-
 transition:.3s;
 
 box-shadow:
 0 0 20px rgba(0,0,0,.25);
 }
 
-.modeBtn.active{
+.filterBtn.active{
 
 background:
 linear-gradient(
@@ -195,16 +196,19 @@ linear-gradient(
 );
 
 box-shadow:
-0 0 25px rgba(124,58,237,.45);
+0 0 30px rgba(168,85,247,.45);
+
 }
 
-/* UPDATE CARD */
+/* UPDATE BOX */
 
-.updateCard{
-padding:22px;
-border-radius:24px;
+.updateBox{
 
-margin-bottom:25px;
+padding:28px;
+
+border-radius:28px;
+
+margin-bottom:28px;
 
 background:
 linear-gradient(
@@ -216,19 +220,28 @@ rgba(15,23,55,.92)
 border:1px solid rgba(255,255,255,.08);
 
 box-shadow:
-0 0 20px rgba(0,0,0,.25);
+0 0 25px rgba(0,0,0,.25);
+
 }
 
-.updateCard h3{
+.updateBox h3{
+
 font-size:20px;
-margin-bottom:10px;
+font-weight:800;
+
 color:#facc15;
+
+margin-bottom:14px;
+
 }
 
-.updateCard p{
+.updateBox p{
+
 font-size:18px;
 font-weight:700;
+
 color:white;
+
 }
 
 /* SEARCH */
@@ -293,17 +306,27 @@ color:#94a3b8;
 /* NOT FOUND */
 
 .notfound{
-padding:40px 20px;
+
 text-align:center;
+
+padding:80px 20px;
+
 }
 
 .notfound h2{
-font-size:28px;
-margin-bottom:10px;
+
+font-size:42px;
+font-weight:900;
+
+margin-bottom:12px;
+
 }
 
 .notfound p{
+
+font-size:18px;
 color:#94a3b8;
+
 }
 
 /* FOOTER */
@@ -321,6 +344,182 @@ color:#cbd5e1;
 .footer span{
 color:#60a5fa;
 font-weight:700;
+}
+
+/* CLICKABLE NAME */
+
+.clickableName{
+cursor:pointer;
+transition:.3s;
+}
+
+.clickableName:hover{
+opacity:.8;
+transform:scale(1.02);
+}
+
+/* PAYMENT MODAL */
+
+.paymentModal{
+
+position:fixed;
+inset:0;
+
+background:
+rgba(0,0,0,.65);
+
+backdrop-filter:blur(10px);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+z-index:9999;
+
+animation:fadeIn .25s ease;
+
+}
+
+.paymentBox{
+
+width:100%;
+max-width:420px;
+
+padding:30px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+135deg,
+rgba(8,15,40,.96),
+rgba(15,23,55,.96)
+);
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 40px rgba(124,58,237,.35);
+
+position:relative;
+
+animation:popup .25s ease;
+
+}
+
+.paymentBox h2{
+
+font-size:32px;
+font-weight:900;
+
+margin-bottom:25px;
+
+background:
+linear-gradient(
+to right,
+#fff,
+#7dd3fc,
+#c084fc
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.paymentItem{
+
+padding:18px;
+
+border-radius:20px;
+
+background:
+rgba(255,255,255,.04);
+
+margin-bottom:16px;
+
+border:1px solid rgba(255,255,255,.06);
+
+}
+
+.paymentItem h3{
+
+font-size:18px;
+margin-bottom:10px;
+color:#facc15;
+
+}
+
+.paymentItem p{
+
+font-size:18px;
+font-weight:700;
+color:white;
+
+word-break:break-all;
+
+}
+
+.closePayment{
+
+position:absolute;
+
+top:14px;
+right:14px;
+
+width:42px;
+height:42px;
+
+border:none;
+outline:none;
+
+border-radius:50%;
+
+background:
+rgba(255,255,255,.08);
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.closePayment:hover{
+
+background:#ef4444;
+
+}
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+@keyframes popup{
+
+from{
+transform:scale(.9);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
 }
 
 /* MOBILE */
@@ -360,184 +559,6 @@ border-radius:20px;
 font-size:34px;
 }
 
-.modeWrap{
-gap:10px;
-}
-
-.modeBtn{
-height:56px;
-font-size:15px;
-border-radius:18px;
-}
-
-.updateCard{
-padding:18px;
-border-radius:20px;
-}
-
-.updateCard h3{
-font-size:18px;
-}
-
-.updateCard p{
-font-size:15px;
-}
-
-.searchInput{
-height:58px;
-font-size:16px;
-padding-left:54px;
-border-radius:18px;
-}
-
-.searchIcon{
-left:18px;
-font-size:20px;
-}
-
-.footer{
-font-size:14px;
-}
-
-}
-
-/* =========================
-FILTER BUTTONS
-========================= */
-
-.filterWrap{
-display:flex;
-gap:16px;
-margin-bottom:28px;
-}
-
-.filterBtn{
-flex:1;
-
-height:72px;
-
-border:none;
-outline:none;
-
-border-radius:24px;
-
-font-size:18px;
-font-weight:800;
-
-color:white;
-
-cursor:pointer;
-
-background:
-linear-gradient(
-135deg,
-rgba(8,15,40,.92),
-rgba(15,23,55,.92)
-);
-
-border:1px solid rgba(255,255,255,.08);
-
-transition:.3s;
-
-box-shadow:
-0 0 20px rgba(0,0,0,.25);
-}
-
-.filterBtn.active{
-
-background:
-linear-gradient(
-135deg,
-#2563eb,
-#7c3aed,
-#d946ef
-);
-
-box-shadow:
-0 0 30px rgba(168,85,247,.45);
-
-}
-
-/* =========================
-UPDATE BOX
-========================= */
-
-.updateBox{
-
-padding:28px;
-
-border-radius:28px;
-
-margin-bottom:28px;
-
-background:
-linear-gradient(
-135deg,
-rgba(8,15,40,.92),
-rgba(15,23,55,.92)
-);
-
-border:1px solid rgba(255,255,255,.08);
-
-box-shadow:
-0 0 25px rgba(0,0,0,.25);
-
-}
-
-.updateBox h3{
-
-font-size:20px;
-font-weight:800;
-
-color:#facc15;
-
-margin-bottom:14px;
-
-}
-
-.updateBox p{
-
-font-size:18px;
-font-weight:700;
-
-color:white;
-
-}
-
-/* =========================
-NOT FOUND
-========================= */
-
-.notfound{
-
-text-align:center;
-
-padding:80px 20px;
-
-}
-
-.notfound h2{
-
-font-size:42px;
-font-weight:900;
-
-margin-bottom:12px;
-
-}
-
-.notfound p{
-
-font-size:18px;
-color:#94a3b8;
-
-}
-
-/* =========================
-MOBILE
-========================= */
-
-@media(max-width:768px){
-
 .filterWrap{
 gap:10px;
 }
@@ -571,6 +592,18 @@ font-size:16px;
 
 }
 
+.searchInput{
+height:58px;
+font-size:16px;
+padding-left:54px;
+border-radius:18px;
+}
+
+.searchIcon{
+left:18px;
+font-size:20px;
+}
+
 .notfound h2{
 
 font-size:30px;
@@ -580,6 +613,35 @@ font-size:30px;
 .notfound p{
 
 font-size:15px;
+
+}
+
+.footer{
+font-size:14px;
+}
+
+.paymentBox{
+
+padding:24px;
+border-radius:24px;
+
+}
+
+.paymentBox h2{
+
+font-size:24px;
+
+}
+
+.paymentItem h3{
+
+font-size:16px;
+
+}
+
+.paymentItem p{
+
+font-size:16px;
 
 }
 
