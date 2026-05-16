@@ -18,7 +18,7 @@ earning:2.246
 name:"SHOVON",
 country:"Bangladesh",
 sms:64,
-earning:1.25
+earning:1.249
 },
 
 {
@@ -66,8 +66,15 @@ earning:0.171
 {
 name:"AHS_jerry",
 country:"Bangladesh",
-sms:3,
-earning:0.075
+sms:6,
+earning:0.150
+},
+
+{
+name:"tltrahat",
+country:"Bangladesh",
+sms:5,
+earning:0.070
 },
 
 {
@@ -82,8 +89,9 @@ earning:0.045
 /*
 Unnamed SMS with earning added to SHOVON
 17 SMS + $0.272
+
 Unnamed SMS with 0 earning NOT added
 */
 
 const dailyUpdate =
-"16 May 2026 • 12:13 PM";
+"16 May 2026 • 12:32 PM";
