@@ -12,7 +12,7 @@ const alltimeBtn = document.getElementById("alltimeBtn");
 
 const updateText = document.getElementById("updateText");
 
-/* SAFE DATA LOAD */
+/* SAFE DATA */
 
 const dailyData =
 typeof users !== "undefined"
@@ -29,11 +29,11 @@ typeof alltimeUsers !== "undefined"
 ? alltimeUsers
 : [];
 
-/* CURRENT DATA */
+/* CURRENT */
 
 let currentData = [...dailyData];
 
-/* UPDATE INFO */
+/* UPDATE */
 
 function setUpdate(type){
 
@@ -66,7 +66,7 @@ typeof alltimeUpdate !== "undefined"
 
 }
 
-/* ACTIVE BUTTON */
+/* ACTIVE */
 
 function setActive(btn){
 
@@ -78,11 +78,12 @@ btn.classList.add("active");
 
 }
 
-/* TOP INFO */
+/* TOP */
 
 function updateTop(data){
 
-userCount.innerText = data.length;
+userCount.innerText =
+data.length;
 
 totalSms.innerText =
 data.reduce((a,b)=>a+b.sms,0);
@@ -94,6 +95,96 @@ a + calculateEarning(
 b.name,
 b.earning
 ),0).toFixed(2);
+
+}
+
+/* PAYMENT INFO */
+
+function openPaymentInfo(name){
+
+const info =
+paymentInfo[name];
+
+if(!info){
+
+alert("No payment info added.");
+
+return;
+
+}
+
+const oldModal =
+document.querySelector(".paymentModal");
+
+if(oldModal){
+
+oldModal.remove();
+
+}
+
+const modal =
+document.createElement("div");
+
+modal.className =
+"paymentModal";
+
+modal.innerHTML = `
+
+<div class="paymentBox">
+
+<button
+class="closePayment"
+onclick="closePaymentInfo()"
+>
+×
+</button>
+
+<h2>
+${name}
+</h2>
+
+<div class="paymentItem">
+
+<h3>
+💳 Bkash Number
+</h3>
+
+<p>
+${info.bkash}
+</p>
+
+</div>
+
+<div class="paymentItem">
+
+<h3>
+🟡 Binance UID
+</h3>
+
+<p>
+${info.binance}
+</p>
+
+</div>
+
+</div>
+
+`;
+
+document.body.appendChild(modal);
+
+}
+
+function closePaymentInfo(){
+
+const modal =
+document.querySelector(".paymentModal");
+
+if(modal){
+
+modal.remove();
+
+}
 
 }
 
@@ -163,7 +254,10 @@ ${index + 1}
 
 <div class="userInfo">
 
-<div class="name">
+<div
+class="name clickableName"
+onclick="openPaymentInfo('${u.name}')"
+>
 ${u.name}
 </div>
 
@@ -243,7 +337,7 @@ setUpdate("weekly");
 
 });
 
-/* ALL TIME */
+/* ALLTIME */
 
 alltimeBtn.addEventListener("click",()=>{
 
@@ -274,7 +368,7 @@ render(filtered);
 
 });
 
-/* DEFAULT LOAD */
+/* DEFAULT */
 
 render(currentData);
 
