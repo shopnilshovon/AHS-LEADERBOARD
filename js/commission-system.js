@@ -15,7 +15,7 @@ if(
 upper.startsWith("AHS") ||
 upper.startsWith("AHS_")
 ){
-return earning*0.90;
+return earning*0.85;
 }
 
 return earning;
