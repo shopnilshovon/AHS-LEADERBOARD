@@ -1,13 +1,6 @@
 const users = [
 
 {
-name:"SHOVON",
-country:"Bangladesh",
-sms:488,
-earning:6.79
-},
-
-{
 name:"tltraihan",
 country:"Bangladesh",
 sms:351,
@@ -82,6 +75,13 @@ name:"AHS_Shanto",
 country:"Bangladesh",
 sms:55,
 earning:1.052
+},
+
+{
+name:"SHOVON",
+country:"Bangladesh",
+sms:44,
+earning:0.912
 },
 
 {
