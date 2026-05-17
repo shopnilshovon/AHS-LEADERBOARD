@@ -12,8 +12,10 @@ return earning*0.80;
 }
 
 if(
-upper.startsWith("tlt") ||
-upper.startsWith("tlt_") ||
+upper.startsWith("tltraihan") ||
+upper.startsWith("tltrafat") ||
+upper.startsWith("tltrahat") ||
+upper.startsWith("tltrakibul") ||
 upper.startsWith("AHS") ||
 upper.startsWith("AHS_")
 ){
