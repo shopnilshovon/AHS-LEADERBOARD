@@ -12,9 +12,9 @@ return earning*0.80;
 }
 
 if(
-upper.startsWith("AHS") ||
 upper.startsWith("tlt") ||
 upper.startsWith("tlt_") ||
+upper.startsWith("AHS") ||
 upper.startsWith("AHS_")
 ){
 return earning*0.85;
