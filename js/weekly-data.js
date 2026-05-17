@@ -29,7 +29,7 @@ earning:13.313
 },
 
 {
-name:"tlttoufiq909",
+name:"Toufiq",
 country:"Bangladesh",
 sms:692,
 earning:11.422
@@ -78,7 +78,7 @@ earning:2.395
 },
 
 {
-name:"tlttoufiq9091",
+name:"Toufiq9091",
 country:"Bangladesh",
 sms:124,
 earning:1.813
@@ -134,7 +134,7 @@ earning:0.057
 },
 
 {
-name:"tlttoufiq9092",
+name:"Toufiq9092",
 country:"Bangladesh",
 sms:1,
 earning:0.014
