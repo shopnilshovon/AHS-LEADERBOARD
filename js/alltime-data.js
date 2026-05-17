@@ -1,7 +1,7 @@
 const alltimeUsers = [
 
 {
-name:"tlttoufiq909",
+name:"Toufiq",
 country:"Bangladesh",
 sms:10269,
 earning:192.929
@@ -50,7 +50,7 @@ earning:26.467
 },
 
 {
-name:"tlttoufiq9091",
+name:"Toufiq9091",
 country:"Bangladesh",
 sms:947,
 earning:15.481
@@ -78,7 +78,7 @@ earning:8.225
 },
 
 {
-name:"tlttoufiq9092",
+name:"Toufiq9092",
 country:"Bangladesh",
 sms:375,
 earning:5.275
