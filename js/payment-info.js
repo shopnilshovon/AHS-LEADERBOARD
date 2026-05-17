@@ -77,7 +77,7 @@ message:"Please add your payment details."
 message:"Please add your payment details."
 },
 
-"tlttoufiq9092":{
+"Toufiq9092":{
 message:"Please add your payment details."
 },
 
@@ -93,11 +93,11 @@ message:"Please add your payment details."
 message:"Please add your payment details."
 },
 
-"tlttoufiq9091":{
+"Toufiq9091":{
 message:"Please add your payment details."
 },
 
-"tlttoufiq909":{
+"Toufiq":{
 message:"Please add your payment details."
 }
 
