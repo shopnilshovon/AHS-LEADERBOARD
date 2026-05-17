@@ -36,7 +36,7 @@ earning:0.980
 },
 
 {
-name:"tlttoufiq909",
+name:"Toufiq",
 country:"Bangladesh",
 sms:52,
 earning:0.864
