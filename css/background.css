@@ -3,214 +3,134 @@ margin:0;
 padding:0;
 overflow-x:hidden;
 background:#030712;
-color:#fff;
+color:white;
 font-family:'Poppins',sans-serif;
 min-height:100vh;
 }
 
 /* =========================
-BACKGROUND MAIN
+BACKGROUND
 ========================= */
 
 .bg{
 position:fixed;
 inset:0;
-z-index:-5;
+z-index:-10;
 overflow:hidden;
 
 background:
-radial-gradient(circle at top left,#0f2fff22 0%,transparent 28%),
-radial-gradient(circle at top right,#ff00ff18 0%,transparent 30%),
 linear-gradient(
 180deg,
-#02030a 0%,
-#040816 20%,
-#060b1d 45%,
-#09051a 70%,
+#01030a 0%,
+#040816 25%,
+#070b1c 50%,
+#09051a 75%,
 #02030a 100%
 );
 
-animation:
-bgShift 18s ease infinite;
-
-background-size:200% 200%;
 }
 
 /* =========================
-ANIMATED AURORA
+AURORA
 ========================= */
 
-.bg::before{
-content:"";
-
+.aurora{
 position:absolute;
-
-left:-20%;
-bottom:-10%;
-
-width:700px;
-height:1200px;
-
-background:
-radial-gradient(
-ellipse at center,
-rgba(0,119,255,.32),
-transparent 70%
-);
-
-filter:blur(80px);
-
-transform:rotate(-15deg);
-
-animation:
-auroraBlue 14s ease-in-out infinite;
-
-mix-blend-mode:screen;
-}
-
-.bg::after{
-content:"";
-
-position:absolute;
-
-right:-20%;
-top:-10%;
-
-width:700px;
-height:1200px;
-
-background:
-radial-gradient(
-ellipse at center,
-rgba(217,70,239,.30),
-transparent 70%
-);
-
 filter:blur(90px);
+mix-blend-mode:screen;
+pointer-events:none;
+}
 
-transform:rotate(15deg);
+.leftAurora{
+
+left:-220px;
+bottom:-120px;
+
+width:500px;
+height:1000px;
+
+background:
+radial-gradient(
+ellipse at center,
+rgba(0,102,255,.35),
+transparent 70%
+);
+
+transform:rotate(-18deg);
 
 animation:
-auroraPink 18s ease-in-out infinite;
-
-mix-blend-mode:screen;
+leftAuroraMove 14s ease-in-out infinite;
 }
 
-@keyframes auroraBlue{
+.rightAurora{
+
+right:-220px;
+top:-120px;
+
+width:500px;
+height:1000px;
+
+background:
+radial-gradient(
+ellipse at center,
+rgba(217,70,239,.34),
+transparent 70%
+);
+
+transform:rotate(18deg);
+
+animation:
+rightAuroraMove 18s ease-in-out infinite;
+}
+
+@keyframes leftAuroraMove{
 
 0%{
 transform:
 translate(0,0)
-rotate(-15deg)
+rotate(-18deg)
 scale(1);
 }
 
 50%{
 transform:
-translate(60px,-40px)
-rotate(-10deg)
-scale(1.1);
-}
-
-100%{
-transform:
-translate(0,0)
-rotate(-15deg)
-scale(1);
-}
-
-}
-
-@keyframes auroraPink{
-
-0%{
-transform:
-translate(0,0)
-rotate(15deg)
-scale(1);
-}
-
-50%{
-transform:
-translate(-70px,50px)
-rotate(10deg)
+translate(50px,-30px)
+rotate(-12deg)
 scale(1.08);
 }
 
 100%{
 transform:
 translate(0,0)
-rotate(15deg)
+rotate(-18deg)
 scale(1);
 }
 
 }
 
-/* =========================
-SCI-FI FRAME
-========================= */
+@keyframes rightAuroraMove{
 
-.bgFrame{
-position:absolute;
-inset:20px;
-
-border:
-1px solid rgba(0,140,255,.25);
-
-border-radius:30px;
-
-pointer-events:none;
-
-box-shadow:
-0 0 30px rgba(0,140,255,.12),
-0 0 60px rgba(217,70,239,.08);
-
+0%{
+transform:
+translate(0,0)
+rotate(18deg)
+scale(1);
 }
 
-.bgFrame::before{
-content:"";
-
-position:absolute;
-
-top:0;
-left:0;
-
-width:140px;
-height:140px;
-
-border-top:
-2px solid #2563eb;
-
-border-left:
-2px solid #2563eb;
-
-border-top-left-radius:28px;
-
-box-shadow:
-0 0 20px rgba(37,99,235,.8);
+50%{
+transform:
+translate(-60px,40px)
+rotate(12deg)
+scale(1.1);
 }
 
-.bgFrame::after{
-content:"";
+100%{
+transform:
+translate(0,0)
+rotate(18deg)
+scale(1);
+}
 
-position:absolute;
-
-bottom:0;
-right:0;
-
-width:140px;
-height:140px;
-
-border-bottom:
-2px solid #d946ef;
-
-border-right:
-2px solid #d946ef;
-
-border-bottom-right-radius:28px;
-
-box-shadow:
-0 0 20px rgba(217,70,239,.8);
 }
 
 /* =========================
@@ -224,46 +144,38 @@ inset:0;
 background-image:
 
 linear-gradient(
-rgba(255,255,255,.03) 1px,
+rgba(255,255,255,.025) 1px,
 transparent 1px
 ),
 
 linear-gradient(
 90deg,
-rgba(255,255,255,.03) 1px,
+rgba(255,255,255,.025) 1px,
 transparent 1px
 );
 
 background-size:40px 40px;
 
-mask-image:
-linear-gradient(
-to bottom,
-transparent,
-rgba(0,0,0,.9),
-transparent
-);
+opacity:.55;
 
 animation:
-gridMove 18s linear infinite;
+gridMove 20s linear infinite;
 }
 
 @keyframes gridMove{
 
 0%{
-transform:
-translateY(0);
+transform:translateY(0);
 }
 
 100%{
-transform:
-translateY(40px);
+transform:translateY(40px);
 }
 
 }
 
 /* =========================
-HEXAGON EFFECT
+HEXAGON
 ========================= */
 
 .hex{
@@ -271,97 +183,284 @@ position:absolute;
 inset:0;
 
 background-image:
-url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cpath d='M30 2 L90 2 L118 52 L90 102 L30 102 L2 52 Z' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'/%3E%3C/svg%3E");
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cpath d='M30 2 L90 2 L118 52 L90 102 L30 102 L2 52 Z' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='1'/%3E%3C/svg%3E");
 
 background-size:120px 104px;
 
 opacity:.18;
 
 animation:
-hexMove 30s linear infinite;
+hexMove 35s linear infinite;
 }
 
 @keyframes hexMove{
 
 0%{
-transform:
-translateY(0);
+transform:translateY(0);
 }
 
 100%{
-transform:
-translateY(104px);
+transform:translateY(104px);
 }
 
 }
 
 /* =========================
-NEON PARTICLES
+FRAME
 ========================= */
 
-.particles{
+.frame{
+position:absolute;
+inset:18px;
+
+border-radius:34px;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+box-shadow:
+0 0 30px rgba(0,140,255,.12),
+0 0 60px rgba(217,70,239,.08);
+
+pointer-events:none;
+}
+
+.frame::before{
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:130px;
+height:130px;
+
+border-top:
+2px solid #2563eb;
+
+border-left:
+2px solid #2563eb;
+
+border-top-left-radius:30px;
+
+box-shadow:
+0 0 25px rgba(37,99,235,.8);
+}
+
+.frame::after{
+content:"";
+
+position:absolute;
+
+bottom:0;
+right:0;
+
+width:130px;
+height:130px;
+
+border-bottom:
+2px solid #d946ef;
+
+border-right:
+2px solid #d946ef;
+
+border-bottom-right-radius:30px;
+
+box-shadow:
+0 0 25px rgba(217,70,239,.8);
+}
+
+/* =========================
+TOP TITLE LIGHT
+========================= */
+
+.frameLight{
+position:absolute;
+
+top:70px;
+left:50%;
+
+transform:translateX(-50%);
+
+width:300px;
+height:2px;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+#2563eb,
+#d946ef,
+transparent
+);
+
+box-shadow:
+0 0 20px rgba(59,130,246,.8);
+
+}
+
+/* =========================
+FLOOR RING
+========================= */
+
+.floorRing{
+position:absolute;
+
+left:50%;
+bottom:-120px;
+
+transform:translateX(-50%);
+
+width:650px;
+height:220px;
+
+border-radius:50%;
+
+border:
+2px solid rgba(59,130,246,.35);
+
+box-shadow:
+0 0 25px rgba(59,130,246,.28),
+0 0 80px rgba(217,70,239,.18);
+
+background:
+radial-gradient(
+ellipse at center,
+rgba(37,99,235,.08),
+transparent 70%
+);
+
+animation:
+ringPulse 6s ease-in-out infinite;
+}
+
+.floorRing::before{
+content:"";
+
+position:absolute;
+inset:18px;
+
+border-radius:50%;
+
+border:
+2px solid rgba(217,70,239,.28);
+}
+
+@keyframes ringPulse{
+
+0%{
+transform:
+translateX(-50%)
+scale(1);
+}
+
+50%{
+transform:
+translateX(-50%)
+scale(1.03);
+}
+
+100%{
+transform:
+translateX(-50%)
+scale(1);
+}
+
+}
+
+/* =========================
+STARS
+========================= */
+
+.stars{
 position:absolute;
 inset:0;
 overflow:hidden;
 }
 
-.particles span{
+.stars span{
 position:absolute;
 
 display:block;
 
-width:3px;
-height:3px;
+width:2px;
+height:2px;
 
 border-radius:50%;
 
 background:white;
 
 box-shadow:
-0 0 12px white,
-0 0 24px #3b82f6,
-0 0 36px #d946ef;
+0 0 10px white,
+0 0 20px #3b82f6,
+0 0 30px #d946ef;
 
 animation:
-particleFloat linear infinite;
+starMove linear infinite;
 }
 
-.particles span:nth-child(1){
+.stars span:nth-child(1){
 left:10%;
 top:90%;
 animation-duration:12s;
-animation-delay:0s;
 }
 
-.particles span:nth-child(2){
-left:25%;
-top:100%;
-animation-duration:16s;
-animation-delay:2s;
-}
-
-.particles span:nth-child(3){
-left:50%;
-top:95%;
-animation-duration:14s;
-animation-delay:4s;
-}
-
-.particles span:nth-child(4){
-left:70%;
+.stars span:nth-child(2){
+left:20%;
 top:100%;
 animation-duration:18s;
-animation-delay:1s;
 }
 
-.particles span:nth-child(5){
-left:85%;
-top:90%;
+.stars span:nth-child(3){
+left:30%;
+top:95%;
+animation-duration:15s;
+}
+
+.stars span:nth-child(4){
+left:45%;
+top:100%;
 animation-duration:20s;
-animation-delay:3s;
 }
 
-@keyframes particleFloat{
+.stars span:nth-child(5){
+left:60%;
+top:92%;
+animation-duration:16s;
+}
+
+.stars span:nth-child(6){
+left:72%;
+top:98%;
+animation-duration:21s;
+}
+
+.stars span:nth-child(7){
+left:84%;
+top:100%;
+animation-duration:17s;
+}
+
+.stars span:nth-child(8){
+left:92%;
+top:96%;
+animation-duration:14s;
+}
+
+.stars span:nth-child(9){
+left:52%;
+top:100%;
+animation-duration:19s;
+}
+
+.stars span:nth-child(10){
+left:38%;
+top:96%;
+animation-duration:22s;
+}
+
+@keyframes starMove{
 
 0%{
 transform:
@@ -378,7 +477,7 @@ opacity:1;
 100%{
 transform:
 translateY(-1200px)
-scale(1.8);
+scale(1.7);
 
 opacity:0;
 }
@@ -386,84 +485,7 @@ opacity:0;
 }
 
 /* =========================
-BOTTOM RING
-========================= */
-
-.ring{
-position:absolute;
-
-left:50%;
-bottom:-140px;
-
-transform:translateX(-50%);
-
-width:700px;
-height:240px;
-
-border-radius:50%;
-
-border:
-2px solid rgba(59,130,246,.35);
-
-box-shadow:
-0 0 30px rgba(59,130,246,.25),
-0 0 80px rgba(217,70,239,.18);
-
-background:
-radial-gradient(
-ellipse at center,
-rgba(37,99,235,.08),
-transparent 70%
-);
-
-filter:blur(.2px);
-
-animation:
-ringPulse 6s ease-in-out infinite;
-}
-
-.ring::before{
-content:"";
-
-position:absolute;
-inset:20px;
-
-border-radius:50%;
-
-border:
-2px solid rgba(217,70,239,.28);
-}
-
-@keyframes ringPulse{
-
-0%{
-transform:
-translateX(-50%)
-scale(1);
-
-opacity:.8;
-}
-
-50%{
-transform:
-translateX(-50%)
-scale(1.03);
-
-opacity:1;
-}
-
-100%{
-transform:
-translateX(-50%)
-scale(1);
-
-opacity:.8;
-}
-
-}
-
-/* =========================
-NOISE TEXTURE
+NOISE
 ========================= */
 
 .noise{
@@ -481,23 +503,12 @@ pointer-events:none;
 }
 
 /* =========================
-BACKGROUND SHIFT
+CONTAINER
 ========================= */
 
-@keyframes bgShift{
-
-0%{
-background-position:0% 50%;
-}
-
-50%{
-background-position:100% 50%;
-}
-
-100%{
-background-position:0% 50%;
-}
-
+.container{
+position:relative;
+z-index:2;
 }
 
 /* =========================
@@ -506,24 +517,35 @@ MOBILE OPTIMIZATION
 
 @media(max-width:768px){
 
-.bgFrame{
+.leftAurora,
+.rightAurora{
+
+width:360px;
+height:700px;
+
+filter:blur(70px);
+
+}
+
+.frame{
 inset:10px;
 border-radius:24px;
 }
 
-.bgFrame::before,
-.bgFrame::after{
-width:90px;
-height:90px;
+.frame::before,
+.frame::after{
+
+width:80px;
+height:80px;
+
 }
 
-.bg::before,
-.bg::after{
+.floorRing{
 
-width:420px;
-height:800px;
+width:380px;
+height:140px;
 
-filter:blur(70px);
+bottom:-70px;
 
 }
 
@@ -532,13 +554,7 @@ background-size:32px 32px;
 }
 
 .hex{
-opacity:.12;
-}
-
-.ring{
-width:420px;
-height:160px;
-bottom:-90px;
+opacity:.1;
 }
 
 }
