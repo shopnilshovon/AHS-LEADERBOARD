@@ -1,4 +1,4 @@
-const leaderboardUsers = [
+const users = [
 
 {
 name:"AHS_Nihon",
@@ -100,5 +100,5 @@ earning:0.150
 
 ];
 
-const leaderboardUpdate =
-"18 May 2026 • 5:43 PM";
+const dailyUpdate =
+"18 May 2026 • 5:56 PM";
