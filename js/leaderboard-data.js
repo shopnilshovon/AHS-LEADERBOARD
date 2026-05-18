@@ -1,91 +1,104 @@
-const leaderboardData = [
+const leaderboardUsers = [
 
 {
 name:"AHS_Nihon",
+country:"Bangladesh",
 sms:1938,
-earn:44.621
+earning:44.621
 },
 
 {
 name:"AHS_Shanto",
+country:"Bangladesh",
 sms:1801,
-earn:42.619
+earning:42.619
 },
 
 {
 name:"Toufiq",
+country:"Bangladesh",
 sms:1265,
-earn:29.250
+earning:29.250
 },
 
 {
 name:"SM_SHAKIB",
+country:"Bangladesh",
 sms:1136,
-earn:26.654
+earning:26.654
 },
 
 {
 name:"AHS_Rocky",
+country:"Bangladesh",
 sms:1082,
-earn:24.690
+earning:24.690
 },
 
 {
 name:"AHS_jerry",
+country:"Bangladesh",
 sms:436,
-earn:10.025
+earning:10.025
 },
 
 {
 name:"AHS_Dip",
+country:"Bangladesh",
 sms:381,
-earn:9.005
+earning:9.005
 },
 
 {
 name:"tltraihan",
+country:"Bangladesh",
 sms:275,
-earn:3.850
+earning:3.850
 },
 
 {
 name:"AH_Limon",
+country:"Bangladesh",
 sms:272,
-earn:6.782
+earning:6.782
 },
 
 {
 name:"AHS_Obito",
+country:"Bangladesh",
 sms:132,
-earn:3.058
+earning:3.058
 },
 
 {
 name:"TTsohanur",
+country:"Bangladesh",
 sms:123,
-earn:3.019
+earning:3.019
 },
 
 {
 name:"SHOVON",
+country:"Bangladesh",
 sms:52,
-earn:1.179
+earning:1.179
 },
 
 {
 name:"AH_Najmul",
+country:"Bangladesh",
 sms:23,
-earn:0.555
+earning:0.555
 },
 
 {
 name:"AH_Rana",
+country:"Bangladesh",
 sms:6,
-earn:0.150
+earning:0.150
 }
 
 ];
 
-const updateInfo = {
-time:"18 May 2026 • 5:43 PM"
-};
+const leaderboardUpdate =
+"18 May 2026 • 5:43 PM";
