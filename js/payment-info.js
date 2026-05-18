@@ -59,6 +59,11 @@ binance:"794889158"
 bkash:"",
 binance:"734913094"
 },
+
+"Toufiq":{
+bkash:"",
+binance:"1139703149"
+},
 /* NO PAYMENT INFO */
 
 "AH_Rana":{
@@ -96,9 +101,5 @@ message:"Please add your payment details."
 "Toufiq9091":{
 message:"Please add your payment details."
 },
-
-"Toufiq":{
-message:"Please add your payment details."
-}
 
 };
