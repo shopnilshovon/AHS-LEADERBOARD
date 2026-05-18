@@ -101,4 +101,4 @@ earning:0.150
 ];
 
 const dailyUpdate =
-"19 May 2026 • 12:47 AM";
+"18 May 2026 • 12:47 PM";
