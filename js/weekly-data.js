@@ -150,6 +150,5 @@ earning:0.207
 ];
 
 const weeklyUpdate =
-"[12 May To 18 May]
-
-19 May 2026 • 7:18 AM";
+"[12 May To 18 May]"
+"19 May 2026 • 7:18 AM";
