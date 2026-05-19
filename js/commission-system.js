@@ -28,14 +28,7 @@ if(
 upper.startsWith("TLT") ||
 upper.startsWith("TLT_")
 ){
-return earning*0.77;
-}
-
-if(
-upper.startsWith("TOUFIQ") ||
-upper.startsWith("SHOVON")
-){
-return earning*0.95;
+return earning*0.78;
 }
 
 return earning;
