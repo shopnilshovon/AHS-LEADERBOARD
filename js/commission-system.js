@@ -28,7 +28,7 @@ if(
 upper.startsWith("TLT") ||
 upper.startsWith("TLT_")
 ){
-return earning*0.78;
+return earning*0.74;
 }
 
 return earning;
