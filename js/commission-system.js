@@ -4,11 +4,9 @@ const upper=name.toUpperCase();
 
 if(
 upper.startsWith("SM_") ||
-upper.startsWith("TT") ||
-upper.startsWith("TT_") ||
 upper.startsWith("TLT") ||
 upper.startsWith("TLT_") ||
-upper.startsWith("AH_")
+upper.startsWith("SM")
 ){
 return earning*0.80;
 }
@@ -18,6 +16,13 @@ upper.startsWith("AHS") ||
 upper.startsWith("AHS_")
 ){
 return earning*0.85;
+}
+
+if(
+upper.startsWith("TT") ||
+upper.startsWith("AH_")
+){
+return earning*0.75;
 }
 
 return earning;
