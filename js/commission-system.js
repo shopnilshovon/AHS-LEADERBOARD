@@ -32,7 +32,7 @@ return earning*0.77;
 }
 
 if(
-upper.startsWith("Toufiq") ||
+upper.startsWith("TOUFIQ") ||
 upper.startsWith("SHOVON")
 ){
 return earning*0.95;
