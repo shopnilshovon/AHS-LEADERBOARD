@@ -1,115 +1,115 @@
 const weeklyUsers = [
 
 {
-name:"tltraihan",
+name:"Toufiq",
 country:"Bangladesh",
-sms:1073,
-earning:20.096
+sms:1531,
+earning:26.528
 },
 
 {
-name:"Toufiq",
+name:"tltraihan",
 country:"Bangladesh",
-sms:864,
-earning:16.150
+sms:1341,
+earning:23.925
 },
 
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:578,
-earning:11.206
-},
-
-{
-name:"AHS_jerry",
-country:"Bangladesh",
-sms:503,
-earning:9.531
+sms:1251,
+earning:22.079
 },
 
 {
 name:"AHS_Rocky",
 country:"Bangladesh",
-sms:462,
-earning:9.628
+sms:947,
+earning:16.813
 },
 
 {
-name:"SM_SHAKIB",
+name:"AHS_jerry",
 country:"Bangladesh",
-sms:384,
-earning:8.531
-},
-
-{
-name:"AHS_Dip",
-country:"Bangladesh",
-sms:361,
-earning:6.949
+sms:784,
+earning:14.052
 },
 
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:337,
-earning:6.923
+sms:651,
+earning:12.406
+},
+
+{
+name:"AHS_Dip",
+country:"Bangladesh",
+sms:650,
+earning:11.494
+},
+
+{
+name:"SM_SHAKIB",
+country:"Bangladesh",
+sms:466,
+earning:10.314
 },
 
 {
 name:"tltrafat",
 country:"Bangladesh",
-sms:317,
-earning:6.323
+sms:504,
+earning:9.114
 },
 
 {
 name:"tltnahid",
 country:"Bangladesh",
-sms:208,
-earning:3.084
-},
-
-{
-name:"TLT_Shahin",
-country:"Bangladesh",
-sms:205,
-earning:2.870
+sms:443,
+earning:6.919
 },
 
 {
 name:"AHS_Shanto",
 country:"Bangladesh",
-sms:184,
-earning:3.446
-},
-
-{
-name:"AHS_Nihon",
-country:"Bangladesh",
-sms:112,
-earning:2.001
+sms:256,
+earning:4.570
 },
 
 {
 name:"AHS_Obito",
 country:"Bangladesh",
-sms:92,
-earning:1.652
+sms:206,
+earning:3.344
+},
+
+{
+name:"AHS_Nihon",
+country:"Bangladesh",
+sms:192,
+earning:3.335
+},
+
+{
+name:"TLT_Shahin",
+country:"Bangladesh",
+sms:206,
+earning:2.883
 },
 
 {
 name:"AH_Limon",
 country:"Bangladesh",
-sms:41,
-earning:0.957
+sms:109,
+earning:2.187
 },
 
 {
 name:"AH_Sujon",
 country:"Bangladesh",
-sms:13,
-earning:0.251
+sms:15,
+earning:0.293
 },
 
 {
@@ -127,6 +127,13 @@ earning:0.150
 },
 
 {
+name:"Toufiq9091",
+country:"Bangladesh",
+sms:3,
+earning:0.057
+},
+
+{
 name:"AH_Najmul",
 country:"Bangladesh",
 sms:2,
@@ -136,4 +143,4 @@ earning:0.044
 ];
 
 const weeklyUpdate =
-"21 May 2026 • 7:32 AM";
+"21 May 2026 • 11:21 PM";
