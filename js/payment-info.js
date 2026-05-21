@@ -64,11 +64,13 @@ binance:"734913094"
 bkash:"",
 binance:"1139703149"
 },
-/* NO PAYMENT INFO */
 
 "AH_Rana":{
-message:"Please add your payment details."
+bkash:"",
+binance:"1096384681"
 },
+
+/* NO PAYMENT INFO */
 
 "tltrakibul":{
 message:"Please add your payment details."
