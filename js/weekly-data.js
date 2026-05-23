@@ -1,31 +1,45 @@
 const weeklyUsers = [
 
 {
-name:"Toufiq",
-country:"Bangladesh",
-sms:1644,
-earning:28.185
-},
-
-{
 name:"tltraihan",
 country:"Bangladesh",
-sms:1602,
-earning:27.675
+sms:2101,
+earning:36.095
 },
 
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:1472,
-earning:26.469
+sms:1826,
+earning:32.129
+},
+
+{
+name:"Toufiq",
+country:"Bangladesh",
+sms:1668,
+earning:28.617
+},
+
+{
+name:"SHOVON",
+country:"Bangladesh",
+sms:1336,
+earning:19.322
 },
 
 {
 name:"AHS_jerry",
 country:"Bangladesh",
-sms:965,
-earning:17.261
+sms:1214,
+earning:21.694
+},
+
+{
+name:"tltnahid",
+country:"Bangladesh",
+sms:1134,
+earning:18.470
 },
 
 {
@@ -36,31 +50,24 @@ earning:17.173
 },
 
 {
-name:"SHOVON",
-country:"Bangladesh",
-sms:866,
-earning:16.464
-},
-
-{
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:742,
-earning:12.940
+sms:830,
+earning:14.338
 },
 
 {
 name:"SM_SHAKIB",
 country:"Bangladesh",
-sms:585,
-earning:12.727
+sms:607,
+earning:13.183
 },
 
 {
-name:"tltnahid",
+name:"AHS_Shanto",
 country:"Bangladesh",
-sms:676,
-earning:10.634
+sms:653,
+earning:11.886
 },
 
 {
@@ -73,29 +80,22 @@ earning:9.474
 {
 name:"AHS_Obito",
 country:"Bangladesh",
-sms:424,
-earning:6.935
-},
-
-{
-name:"AHS_Shanto",
-country:"Bangladesh",
-sms:370,
-earning:6.551
+sms:549,
+earning:9.274
 },
 
 {
 name:"AH_Limon",
 country:"Bangladesh",
-sms:223,
-earning:4.709
+sms:402,
+earning:8.468
 },
 
 {
 name:"AHS_Nihon",
 country:"Bangladesh",
-sms:198,
-earning:3.436
+sms:211,
+earning:3.643
 },
 
 {
@@ -108,8 +108,8 @@ earning:2.883
 {
 name:"AH_Sujon",
 country:"Bangladesh",
-sms:22,
-earning:0.412
+sms:25,
+earning:0.469
 },
 
 {
@@ -124,16 +124,9 @@ name:"AHS_Jehan",
 country:"Bangladesh",
 sms:6,
 earning:0.150
-},
-
-{
-name:"AH_Najmul",
-country:"Bangladesh",
-sms:2,
-earning:0.044
 }
 
 ];
 
 const weeklyUpdate =
-"23 May 2026 • 9:08 AM";
+"24 May 2026 • 1:46 AM";
