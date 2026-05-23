@@ -6,14 +6,14 @@ if(
 upper.startsWith("SM_") ||
 upper.startsWith("SM")
 ){
-return earning*0.80;
+return earning*0.79;
 }
 
 if(
 upper.startsWith("AHS") ||
 upper.startsWith("AHS_")
 ){
-return earning*0.85;
+return earning*0.84;
 }
 
 if(
