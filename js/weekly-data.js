@@ -3,92 +3,99 @@ const weeklyUsers = [
 {
 name:"Toufiq",
 country:"Bangladesh",
-sms:1531,
-earning:26.528
+sms:1644,
+earning:28.185
 },
 
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:1341,
-earning:23.925
+sms:1602,
+earning:27.675
 },
 
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:1251,
-earning:22.079
-},
-
-{
-name:"AHS_Rocky",
-country:"Bangladesh",
-sms:947,
-earning:16.813
+sms:1472,
+earning:26.469
 },
 
 {
 name:"AHS_jerry",
 country:"Bangladesh",
-sms:784,
-earning:14.052
+sms:965,
+earning:17.261
+},
+
+{
+name:"AHS_Rocky",
+country:"Bangladesh",
+sms:972,
+earning:17.173
 },
 
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:651,
-earning:12.406
+sms:866,
+earning:16.464
 },
 
 {
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:650,
-earning:11.494
+sms:742,
+earning:12.940
 },
 
 {
 name:"SM_SHAKIB",
 country:"Bangladesh",
-sms:466,
-earning:10.314
-},
-
-{
-name:"tltrafat",
-country:"Bangladesh",
-sms:504,
-earning:9.114
+sms:585,
+earning:12.727
 },
 
 {
 name:"tltnahid",
 country:"Bangladesh",
-sms:443,
-earning:6.919
+sms:676,
+earning:10.634
 },
 
 {
-name:"AHS_Shanto",
+name:"tltrafat",
 country:"Bangladesh",
-sms:256,
-earning:4.570
+sms:528,
+earning:9.474
 },
 
 {
 name:"AHS_Obito",
 country:"Bangladesh",
-sms:206,
-earning:3.344
+sms:424,
+earning:6.935
+},
+
+{
+name:"AHS_Shanto",
+country:"Bangladesh",
+sms:370,
+earning:6.551
+},
+
+{
+name:"AH_Limon",
+country:"Bangladesh",
+sms:223,
+earning:4.709
 },
 
 {
 name:"AHS_Nihon",
 country:"Bangladesh",
-sms:192,
-earning:3.335
+sms:198,
+earning:3.436
 },
 
 {
@@ -99,24 +106,17 @@ earning:2.883
 },
 
 {
-name:"AH_Limon",
-country:"Bangladesh",
-sms:109,
-earning:2.187
-},
-
-{
 name:"AH_Sujon",
 country:"Bangladesh",
-sms:15,
-earning:0.293
+sms:22,
+earning:0.412
 },
 
 {
-name:"tltrakibul",
+name:"Toufiq9091",
 country:"Bangladesh",
-sms:10,
-earning:0.230
+sms:4,
+earning:0.076
 },
 
 {
@@ -124,13 +124,6 @@ name:"AHS_Jehan",
 country:"Bangladesh",
 sms:6,
 earning:0.150
-},
-
-{
-name:"Toufiq9091",
-country:"Bangladesh",
-sms:3,
-earning:0.057
 },
 
 {
@@ -143,4 +136,4 @@ earning:0.044
 ];
 
 const weeklyUpdate =
-"21 May 2026 • 11:21 PM";
+"23 May 2026 • 9:08 AM";
