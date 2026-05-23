@@ -29,17 +29,17 @@ earning:1.062
 },
 
 {
-name:"SM_SHAKIB",
-country:"Bangladesh",
-sms:46,
-earning:0.943
-},
-
-{
 name:"SHOVON",
 country:"Bangladesh",
 sms:47,
 earning:1.027
+},
+
+{
+name:"SM_SHAKIB",
+country:"Bangladesh",
+sms:46,
+earning:0.943
 },
 
 {
