@@ -70,33 +70,24 @@ bkash:"",
 binance:"1096384681"
 },
 
-/* NO PAYMENT INFO */
-
-"tltrakibul":{
-message:"Please add your payment details."
+"tltrafat":{
+bkash:"01300938563",
+binance:""
 },
 
 "tltnahid":{
-message:"Please add your payment details."
-},
-
-"tltrahat":{
-message:"Please add your payment details."
-},
-
-"Toufiq9092":{
-message:"Please add your payment details."
+bkash:"01992420793",
+binance:""
 },
 
 "tltraihan":{
-message:"Please add your payment details."
+bkash:"01643380325",
+binance:""
 },
+
+/* NO PAYMENT INFO */
 
 "tlttusher":{
-message:"Please add your payment details."
-},
-
-"tltrafat":{
 message:"Please add your payment details."
 },
 
