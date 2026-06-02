@@ -3,22 +3,22 @@ const weeklyUsers = [
 {
 name:"TTsohanur",
 country:"Bangladesh",
-sms:818,
-earning:14.898
+sms:903,
+earning:16.805
 },
 
 {
 name:"AHS_Rocky",
 country:"Bangladesh",
-sms:445,
-earning:8.401
+sms:615,
+earning:11.630
 },
 
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:357,
-earning:6.775
+sms:361,
+earning:6.862
 },
 
 {
@@ -38,22 +38,22 @@ earning:5.308
 {
 name:"AHS_jerry",
 country:"Bangladesh",
-sms:219,
-earning:4.144
+sms:226,
+earning:4.276
 },
 
 {
 name:"SM_SHAKIB",
 country:"Bangladesh",
-sms:195,
-earning:3.942
+sms:196,
+earning:3.961
 },
 
 {
 name:"AHS_Dip",
 country:"Bangladesh",
-sms:177,
-earning:3.247
+sms:184,
+earning:3.380
 },
 
 {
@@ -66,22 +66,22 @@ earning:3.211
 {
 name:"AH_Sujon",
 country:"Bangladesh",
-sms:159,
-earning:3.139
+sms:160,
+earning:3.158
 },
 
 {
 name:"AHS_Obito",
 country:"Bangladesh",
-sms:154,
-earning:2.851
+sms:157,
+earning:2.905
 },
 
 {
 name:"SHOVON",
 country:"Bangladesh",
-sms:118,
-earning:2.501
+sms:119,
+earning:2.519
 },
 
 {
@@ -108,4 +108,4 @@ earning:0.054
 ];
 
 const weeklyUpdate =
-"1 Jun 2026 • 7:44 PM";
+"26May to 1 Jun 2026 • 10:33 AM";
