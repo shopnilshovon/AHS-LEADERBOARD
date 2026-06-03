@@ -17,8 +17,8 @@ earning:11.630
 {
 name:"tltraihan",
 country:"Bangladesh",
-sms:361,
-earning:6.862
+sms:300,
+earning:5.715
 },
 
 {
