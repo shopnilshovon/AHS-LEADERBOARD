@@ -6,7 +6,7 @@ if(
 upper.startsWith("SM_") ||
 upper.startsWith("SM")
 ){
-return earning*0.79;
+return earning*0.84;
 }
 
 if(
