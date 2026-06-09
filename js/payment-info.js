@@ -56,7 +56,7 @@ binance:"794889158"
 },
 
 "SM_SHAKIB":{
-bkash:"",
+bkash:"01326510282",
 binance:"734913094"
 },
 
