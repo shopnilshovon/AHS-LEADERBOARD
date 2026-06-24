@@ -1,36 +1,33 @@
-function calculateEarning(name,earning){
+function calculateEarning(name, earning){
 
-const upper=name.toUpperCase();
+const upper = name.toUpperCase();
 
-if(
-upper.startsWith("SM_") ||
-upper.startsWith("SM")
-){
-return earning*0.84;
+// Special Users
+const specialRates = {
+"KataKana": 0.95, // 5% কাটবে
+"Nakamora": 0.95,  // 5% কাটবে
+"UA_Akaza": 0.95      // কোন কাটবে না
+};
+
+if(specialRates[upper]){
+return earning * specialRates[upper];
 }
 
+// Normal Rules
 if(
-upper.startsWith("AHS") ||
-upper.startsWith("AHS_")
+upper.startsWith("SM") ||
+upper.startsWith("AHS")
 ){
-return earning*0.84;
+return earning * 0.80; // 20% কাটবে
 }
 
 if(
 upper.startsWith("TT") ||
+upper.startsWith("TLT") ||
 upper.startsWith("AH_")
 ){
-return earning*0.75;
-}
-
-
-if(
-upper.startsWith("TLT") ||
-upper.startsWith("TLT_")
-){
-return earning*0.75;
+return earning * 0.80;
 }
 
 return earning;
-
 }
