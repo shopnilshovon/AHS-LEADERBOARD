@@ -15,8 +15,8 @@ return earning * specialRates[upper];
 
 // Normal Rules
 if(
-upper.startsWith("NSA") ||
-upper.startsWith("K")
+upper.startsWith("NSA_") ||
+upper.startsWith("K_")
 ){
 return earning * 0.98; 
 }
