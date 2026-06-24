@@ -22,9 +22,8 @@ return earning * 0.98;
 }
 
 if(
-upper.startsWith("UA") ||
 upper.startsWith("UA_") ||
-upper.startsWith("AHS")
+upper.startsWith("AHS_")
 ){
 return earning * 0.80;
 }
