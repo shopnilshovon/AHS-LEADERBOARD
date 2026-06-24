@@ -15,10 +15,10 @@ return earning * specialRates[upper];
 
 // Normal Rules
 if(
-upper.startsWith("SM") ||
-upper.startsWith("AHS")
+upper.startsWith("NSA") ||
+upper.startsWith("K")
 ){
-return earning * 0.80; // 20% কাটবে
+return earning * 0.98; 
 }
 
 if(
