@@ -4,28 +4,29 @@ const upper = name.toUpperCase();
 
 // Special Users
 const specialRates = {
-"KataKana": 0.95, // 5% কাটবে
-"Nakamora": 0.95,  // 5% কাটবে
-"UA_Akaza": 0.95      // কোন কাটবে না
+"KATAKANA": 0.95,  // 5% কাটবে
+"NAKAMORA": 0.95,  // 5% কাটবে
+"UA_AKAZA": 0.95   // 5% কাটবে
 };
 
-if(specialRates[upper]){
-return earning * specialRates[upper];
+if (specialRates.hasOwnProperty(upper)) {
+    return earning * specialRates[upper];
 }
 
-// Normal Rules
-if(
-upper.startsWith("NSA_") ||
-upper.startsWith("K_")
+// NSA_ & K_ = 2% কাটবে
+if (
+    upper.startsWith("NSA_") ||
+    upper.startsWith("K_")
 ){
-return earning * 0.98; 
+    return earning * 0.98;
 }
 
-if(
-upper.startsWith("UA_") ||
-upper.startsWith("AHS_")
+// UA_ & AHS_ = 20% কাটবে
+if (
+    upper.startsWith("UA_") ||
+    upper.startsWith("AHS_")
 ){
-return earning * 0.80;
+    return earning * 0.80;
 }
 
 return earning;
