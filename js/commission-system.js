@@ -22,9 +22,9 @@ return earning * 0.98;
 }
 
 if(
-upper.startsWith("TT") ||
-upper.startsWith("TLT") ||
-upper.startsWith("AH_")
+upper.startsWith("UA") ||
+upper.startsWith("UA_") ||
+upper.startsWith("AHS")
 ){
 return earning * 0.80;
 }
