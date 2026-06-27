@@ -21,6 +21,13 @@ if (
     return earning * 0.98;
 }
 
+if (
+    upper.startsWith("TMT_") ||
+    upper.startsWith("TMT")
+){
+    return earning * 0.25;
+}
+
 // UA_ & AHS_ = 20% কাটবে
 if (
     upper.startsWith("UA_") ||
